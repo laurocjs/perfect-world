@@ -1,9 +1,8 @@
-var limiteEsquerdo = 0;
-var limiteDireito = 100;
-var posicao = limiteEsquerdo+1;
+let limiteEsquerdo = 0;
+let limiteDireito = 100;
+let posicao = limiteEsquerdo+1;
+let monstro = document.querySelector("#monster");
 document.addEventListener('keydown', (event => {
-  let monstro = document.querySelector("#monster");
-  debugger;
   if (event.keyCode == 37 && posicao > limiteEsquerdo) {
     posicao -= 1;
     monstro.style.marginLeft = posicao + "px";

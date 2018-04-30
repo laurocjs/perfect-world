@@ -1,0 +1,33 @@
+#menu {
+  position: fixed;
+  left: 50px;
+  top: 70%;
+  z-index: 3;
+  
+}
+
+#mais-menu {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background-color: #46f362;
+  color: #fff;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#menu-itens {
+  width: 200px;
+  background-color: white;
+}
+
+#menu-itens.fechado {
+  height: 0px;
+}
+
+#menu-itens.aberto {
+  height: 500px;
+}
