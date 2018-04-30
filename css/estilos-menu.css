@@ -1,13 +1,18 @@
 #menu {
   position: fixed;
   left: 50px;
-  top: 70%;
+  bottom: 10%;
   z-index: 3;
-  
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 400px;
 }
 
-#mais-menu {
-  position: absolute;
+#menu-toggle {
+  position: relative;
   height: 50px;
   width: 50px;
   border-radius: 100%;
@@ -17,17 +22,57 @@
   line-height: 50px;
   text-align: center;
   vertical-align: middle;
+  transition: background-color 3s;
+  cursor: pointer;
+}
+
+#menu-toggle:hover {
+  background-color: rgb(44, 138, 247);
+  transition: background-color 3s;
 }
 
 #menu-itens {
-  width: 200px;
-  background-color: white;
-}
-
-#menu-itens.fechado {
+  position: absolute;
+  bottom: 55px;
+  width: 400px;
   height: 0px;
+  /* começa fechado */
+  background-color: white;
+  transition: height 3s ease-in-out;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #menu-itens.aberto {
-  height: 500px;
+  height: 400px;
+}
+
+#menu-itens .item {
+  position: relative;
+  width: 40%;
+  height: 0px;
+  margin: 10px;
+  border-radius: 3px;
+  background-color: skyblue;
+  opacity: .1;
+  transition: opacity 5s .5s, height 3s .5s;
+  cursor: move;
+  cursor: -moz-grab;
+}
+
+#menu-itens.aberto .item {
+  height: 25%;
+  opacity: .7;
+}
+
+#menu-itens.aberto .item:hover {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#menu-itens.aberto .item:active:hover {
+  cursor: -moz-grabbing;
 }
