@@ -1,23 +1,38 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>Formulario Terrivel</title>
-  <link rel="stylesheet" href="css/estilo.css">
+	<meta charset="utf-8">
+	<title>Formulario Terrivel</title>
+	<link rel="stylesheet" href="css/estilos-comuns.css">
+	<link rel="stylesheet" href="css/estilos-cadastro-login.css">
 </head>
+
 <body>
 	<main>
-	<form method="POST" action="">
-		<div>
-		<h1>Cadastro</h1>
-		<label>Usuario: <input name="user" type="text"></label>
-		<label>Nome: <input name="nome" type="text"></label>
-		<label>Email: <input name="email" type="text"></label>
-		<label>Senha: <input name="passwd" type="password"></label>
-		<label>Confirmar Senha: <input name="passwdconfirm" type="password"></label>
-		<center><button>Cadastrar</button></center>
-		</div>
-	</form>
+		<form method="POST" action="index.html">
+			<div>
+				<h1>Cadastro</h1>
+				<article class="form-item">
+					<label>Nome:</label>
+					<input name="nome" type="text" placeholder="Nome">
+				</article>
+				<article class="form-item">
+					<label>Email:</label>
+					<input name="email" type="email" placeholder="Email">
+				</article>
+				<article class="form-item">
+					<label>Senha:</label>
+					<input name="passwd" type="password" placeholder="Senha">
+				</article>
+				<article class="form-item">
+					<label>Confirmar Senha:</label>
+					<input name="passwdconfirm" type="password" placeholder="Confirmar senha">
+				</article>
+				<button>Cadastrar</button>
+			</div>
+		</form>
 	</main>
 </body>
+
 </html>
