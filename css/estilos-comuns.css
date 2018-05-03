@@ -51,7 +51,7 @@ body {
   height: 126px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url('../resources/images/cuei-parado.png');
+  background-image: url('../resources/images/pato-parado.png');
   animation: stopcoelho 2s steps(3) infinite;
 }
 
