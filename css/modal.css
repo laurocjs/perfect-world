@@ -8,18 +8,27 @@
   left: 0;
   right: 0;
   position: fixed;
-  /* z-index: 3; */
+  z-index: 3;
   background-color: rgba(1, 1, 1, .4)
 }
 
+.fechar-modal {
+  display: none;
+  z-index: 4;
+  position: fixed;
+  top: 16px;
+  bottom: 16px;
+}
+
 .conteudo-modal {
+  z-index: 3;
   display: flex;
   position: fixed;
-  top: 20%;
-  bottom: 20%;
+  top: 10%;
+  bottom: 10%;
   left: 20%;
   right: 20%;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -47,8 +56,7 @@
 }
 
 .imagem {
-  position: relative;
-  height: 50%;
+  height: 70%;
   width: 100%;
 }
 
@@ -60,6 +68,7 @@
   width: 40px;
   border: none;
   outline: none;
+  top: 0;
 }
 
 .imagem .botao:hover {
@@ -72,4 +81,21 @@
 
 .imagem .botao#botao-avancar {
   right: 0;
+}
+
+@media (max-width: 487px) {
+  .fechar-modal {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../resources/images/x-close.svg);
+    background-size: cover;
+    stroke: violet;
+  }
+  .conteudo-modal {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
