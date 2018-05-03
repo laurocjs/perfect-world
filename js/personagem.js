@@ -8,7 +8,6 @@ window.setInterval(gravidade, 100); function gravidade(){
 	}
 }
 document.addEventListener('keydown', (event => {
-  debugger;
   if (event.keyCode == 37 && posicao > limiteEsquerdo) {
     posicao -= 5;
     monstro.style.marginLeft = posicao + "px";

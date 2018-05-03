@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/flickity.css" media="screen">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .carousel {
+      background: #FAFAFA;
+    }
+
+    .carousel-cell {
+      width: 28%;
+      height: 200px;
+      margin-right: 10px;
+      background: #8C8;
+      line-height: 200px;
+      font-size: 80px;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .button {
+      font-size: 22px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <h1>Flickity - append, vanilla JS</h1>
+
+  <p>
+    <button class="button button--append">Append</button>
+  </p>
+
+  <div class="carousel">
+    <div class="carousel-cell">1</div>
+    <div class="carousel-cell">2</div>
+    <div class="carousel-cell">3</div>
+  </div>
+
+  <script>// external js: flickity.pkgd.js
+    <script type="text/javascript" src="js/flickity.pkgd.min.js"></script> var flkty = new Flickity('.carousel', { initialIndex: 2 }); var appendButton = document.querySelector('.button--append');
+  appendButton.addEventListener('click', function () { var cellElems = [makeCell(), makeCell()]; flkty.append(cellElems);
+  }); var cellCount = flkty.cells.length; function makeCell() { cellCount++; var cell = document.createElement('div'); cell.className
+  = 'carousel-cell'; cell.textContent = cellCount; return cell; }
+  </script>
+</body>
+
+</html>
