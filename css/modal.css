@@ -1,0 +1,75 @@
+#modal {
+  display: none;
+}
+
+.backdrop {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  /* z-index: 3; */
+  background-color: rgba(1, 1, 1, .4)
+}
+
+.conteudo-modal {
+  display: flex;
+  position: fixed;
+  top: 20%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+  background-color: #fff;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1em;
+  padding: 0px;
+}
+
+.conteudo-modal .titulo {
+  font-size: 24px;
+  padding: 0px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.conteudo-modal .descricao {
+  font-size: 16px;
+  padding: 0px 16px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.imagem {
+  position: relative;
+  height: 50%;
+  width: 100%;
+}
+
+.imagem .botao {
+  height: 100%;
+  position: absolute;
+  background-color: rgba(1, 1, 1, .2);
+  color: #fff;
+  width: 40px;
+  border: none;
+  outline: none;
+}
+
+.imagem .botao:hover {
+  background-color: rgba(1, 1, 1, .4);
+}
+
+.imagem .botao#botao-voltar {
+  left: 0;
+}
+
+.imagem .botao#botao-avancar {
+  right: 0;
+}
