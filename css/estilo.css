@@ -1,0 +1,60 @@
+form label{
+	display: table-row;
+}
+
+main{
+	padding-top:100px;
+	background-image: url('tiles-big.png');
+	font-family: verdana;
+	display:flex;
+}
+form{
+	border: solid 5px;
+	border-color: rgb(0, 0, 0);
+	margin-left: auto;
+	margin-right: auto;
+	width: 35%;
+	text-align: center;
+}
+form div{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+form label{
+	line-height: 50px;	
+}
+
+form input{
+	margin-top: 15px;
+	float: right;
+	margin-left: 15px;		
+}
+
+form select{
+	float: right;
+	margin-left:40px;
+}
+
+form button{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+form center{
+	padding-top: 10%;
+	padding-bottom: 10%;
+}

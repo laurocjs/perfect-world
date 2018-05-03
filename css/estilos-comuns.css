@@ -43,33 +43,66 @@ body {
 
 #monster-container {
   position: absolute;
-  top: -140px;
+  top: -120px;
 }
 
 #monster {
-  width: 120px;
-  height: 160px;
+  width: 150px;
+  height: 126px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url('../resources/images/terrivel-standing-big.png');
-  animation: standing 1.5s steps(2) infinite;
+  background-image: url('../resources/images/cuei-parado.png');
+  animation: stopcoelho 2s steps(3) infinite;
 }
 
-#monster.eating {
-  background-image: url('../resources/images/terrivel-eating-big.png');
-  animation: eating .3s steps(3) infinite;
+#monster.coelho-parado{
+  background-image: url('../resources/images/cuei-parado.png');
+  animation: stopcoelho 2s steps(3) infinite;
 }
 
-@keyframes eating {
-  100% {
-    background-position: -360px 0;
-  }
+#monster.coelho-esquerda {
+  background-image: url('../resources/images/cuei-esquerda.png');
+  animation: walkingcoelho .5s steps(4) infinite;
 }
 
-@keyframes standing {
-  100% {
-    background-position: -240px 0;
-  }
+#monster.coelho-direita {
+  background-image: url('../resources/images/cuei-direita.png');
+  animation: walkingcoelho .5s steps(4) infinite;
+}
+
+#monster.coelho-pulo {
+  background-image: url('../resources/images/cuei-pulo.png');
+}
+
+#monster.pato-parado{
+  background-image: url('../resources/images/pato-parado.png');
+  animation: stoppato 2s steps(4) infinite;
+}
+
+#monster.pato-esquerda {
+  background-image: url('../resources/images/pato-esquerda.png');
+  animation: walkingcoelho .5s steps(4) infinite;
+}
+
+#monster.pato-direita {
+  background-image: url('../resources/images/pato-direita.png');
+  animation: walkingcoelho .5s steps(4) infinite;
+}
+
+#monster.pato-pulo {
+  background-image: url('../resources/images/pato-pulo.png');
+}
+
+@keyframes stopcoelho {
+  100% { background-position: -450px 0; }
+}
+
+@keyframes stoppato {
+  100% { background-position: -600px 0; }
+}
+
+@keyframes walkingcoelho {
+  100% { background-position: -600px 0; }
 }
 
 #canvas-area {
