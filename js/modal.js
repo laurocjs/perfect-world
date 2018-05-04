@@ -51,7 +51,7 @@ botaoAvancar.addEventListener('click', () => trocaImagem(1));
 
 // Novos itens menu
 
-let menuInicialBackup = document.querySelector('#menu-itens');
+const menuInicialBackup = document.querySelector('#menu-itens');
 
 const setIntro = text => {
   localStorage.setItem('emphatic', text);

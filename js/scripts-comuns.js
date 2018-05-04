@@ -15,7 +15,6 @@ localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VIS
 
 // Audio
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';
-let audioNovo = 'https://ia800801.us.archive.org/11/items/TheImperialMarch/The-Imperial-March.mp3';
 
 let audioATocar = localStorage.getItem('AUDIO_LOCAL');
 if (!audioATocar)
