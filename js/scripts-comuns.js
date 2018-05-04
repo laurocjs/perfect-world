@@ -9,10 +9,10 @@ document.querySelector("#menu-toggle").addEventListener('click', (event => {
 // Numero de visitas
 let numeroDeVisitas = undefined;//localStorage.getItem('NUMERO_VISITAS');
 if (!numeroDeVisitas) {
-  // localStorage.setItem('NUMERO_VISITAS', 0);
+  localStorage.setItem('NUMERO_VISITAS', 0);
 }
-// localStorage.setItem('NUMERO_VISITAS', localStorage.getItem('NUMERO_VISITAS') + 1);
-// alert(localStorage.getItem('NUMERO_VISITAS'));
+localStorage.setItem('NUMERO_VISITAS', localStorage.getItem('NUMERO_VISITAS') + 1);
+alert(localStorage.getItem('NUMERO_VISITAS'));
 
 // Audio
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';

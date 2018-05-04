@@ -6,7 +6,7 @@ let posicaoy = limiteBaixo + 1;
 let monstro = document.querySelector("#monster");
 window.setInterval(gravidade, 100);
 
-let type = undefined;//localStorage.getItem('TIPO_PERSONAGEM');
+let type = localStorage.getItem('TIPO_PERSONAGEM');
 if (!type)
 	type = "pato";
 
@@ -85,5 +85,5 @@ function mudaPersonagem() {
 		monstro.classList.add(type + '-parado');
 		return;
 	}
-	//localStorage.setItem('TIPO_PERSONAGEM', type);
+	localStorage.setItem('TIPO_PERSONAGEM', type);
 }
