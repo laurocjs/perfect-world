@@ -11,7 +11,7 @@ let numeroDeVisitas = localStorage.getItem('NUMERO_VISITAS');
 if (!numeroDeVisitas) {
   localStorage.setItem('NUMERO_VISITAS', 1);
 }
-localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VISITAS')) +1);
+localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VISITAS')) + 1);
 alert(localStorage.getItem('NUMERO_VISITAS'));
 
 // Audio
@@ -36,3 +36,9 @@ function criaAudio() {
 
 let botaoDefinirAudio = document.querySelector("#definir-audio");
 botaoDefinirAudio.addEventListener('click', criaAudio);
+
+let botaoVisitas = document.querySelector("#contador-de-visitas");
+botaoVisitas.addEventListener('click', () => {
+  abrirModal();
+  imagemModal.style.display = 'none'
+});

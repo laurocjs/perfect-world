@@ -33,8 +33,10 @@ document.addEventListener('keydown', (event => {
 		monstro.classList.add(type + '-esquerda');
 	}
 	if (event.keyCode == 39 && posicao < limiteDireito) {
-		posicao += 5;
-		monstro.style.marginLeft = posicao + "px";
+		if (posicao < window.innerWidth - monstro.clientWidth) {
+			posicao += 5;
+			monstro.style.marginLeft = posicao + "px";
+		}
 		monstro.classList.remove(type + '-parado');
 		monstro.classList.remove(type + '-esquerda');
 		monstro.classList.add(type + '-direita');
