@@ -89,7 +89,17 @@ const trocarPersonagem = () => {
 }
 
 const colocarMusica = () => {
-  let menu = '<h1>Colocar Musica</h1><article data-item="0">voltar</article>'
+  let menu = '<form>' +
+    '<article data-item="0"> &lt;' +
+    '</article>' +
+    '<article class="form-item">' +
+    '<input name="nome" class="target" type="text" placeholder="Url da música">' +
+    '</article>' +
+    '</form>';
+  $('#menu-itens').html(menu);
+  $(".target").change(function () {
+    alert("musica no ar");
+  });
   $('#menu-itens').html(menu);
 }
 
