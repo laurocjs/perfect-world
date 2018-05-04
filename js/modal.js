@@ -48,7 +48,6 @@ botaoVoltar.addEventListener('click', () => trocaImagem(-1));
 botaoAvancar.addEventListener('click', () => trocaImagem(1));
 
 document.querySelector("#evento-galeria").addEventListener("blur", (e) => {
-  e.currentTarget.getChildren()
   e;
   debugger;
 });
