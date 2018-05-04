@@ -98,7 +98,7 @@ const colocarMusica = () => {
     '</form>';
   $('#menu-itens').html(menu);
   debugger;
-  $(".target").change((e) => {
+  $(".target").change(function(e) {
     e;
     debugger;
     criaAudio('https://ia800801.us.archive.org/11/items/TheImperialMarch/The-Imperial-March.mp3');
