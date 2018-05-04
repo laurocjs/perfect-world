@@ -12,7 +12,7 @@ if (!numeroDeVisitas) {
   localStorage.setItem('NUMERO_VISITAS', 1);
 }
 localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VISITAS')) + 1);
-document.querySelector("#visits_counter").innerHTML=localStorage.getItem('NUMERO_VISITAS');
+document.querySelector("#visits_counter").innerHTML = localStorage.getItem('NUMERO_VISITAS');
 
 // Audio
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';
@@ -30,8 +30,10 @@ function criaAudio(novoAudio) {
   localStorage.setItem('AUDIO_LOCAL', novoAudio);
 
 }
-document.querySelector("#evento-musica").addEventListener("blur", () => {
-  alert('blurrr');
+document.querySelector("#evento-musica").addEventListener("blur", (e) => {
+  e;
+  debugger;
+  criaAudio(e.currentTarget.text);
 });
 
 // let botaoDefinirAudio = document.querySelector("#definir-audio");
