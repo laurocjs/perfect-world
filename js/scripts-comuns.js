@@ -16,16 +16,15 @@ document.querySelector("#visits_counter").innerHTML=localStorage.getItem('NUMERO
 
 // Audio
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';
-let audioNovo = 'https://ia800801.us.archive.org/11/items/TheImperialMarch/The-Imperial-March.mp3';
 
 let audioATocar = localStorage.getItem('AUDIO_LOCAL');
-if (!audioATocar)
-  audioATocar = audioExemplo;
-
-let audio = new Audio(audioATocar);
-audio.play();
+if (audioATocar) {
+  let audio = new Audio(audioATocar);
+  audio.play();
+}
 
 function criaAudio(novoAudio) {
+  debugger;
   audio.pause();
   audio = new Audio(novoAudio);
   audio.play();
