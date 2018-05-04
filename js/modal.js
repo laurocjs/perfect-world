@@ -48,6 +48,16 @@ botaoVoltar.addEventListener('click', () => trocaImagem(-1));
 botaoAvancar.addEventListener('click', () => trocaImagem(1));
 
 document.querySelector("#evento-galeria").addEventListener("blur", (e) => {
-  e;
-  debugger;
+
+  let listaValores = document.querySelectorAll(".valor-imagem");
+  let titulo = document.querySelectorAll(".valor-titulo");
+  let desc = document.querySelectorAll(".valor-desc");
+
+  let lista = [];
+  for (let elemento of listaValores) {
+    if (elemento.value)
+      lista.push(elemento.value);
+  }
+
+  setGaleriaModal(titulo, desc, lista);
 });
