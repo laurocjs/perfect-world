@@ -18,8 +18,9 @@ document.querySelector("#visits_counter").innerHTML = localStorage.getItem('NUME
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';
 
 let audioATocar = localStorage.getItem('AUDIO_LOCAL');
+let audio = new Audio();
 if (audioATocar) {
-  let audio = new Audio(audioATocar);
+  audio = new Audio(audioATocar);
   audio.play();
 }
 
