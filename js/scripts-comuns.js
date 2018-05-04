@@ -16,11 +16,22 @@ alert(localStorage.getItem('NUMERO_VISITAS'));
 
 // Audio
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';
-let audio = new Audio(audioExemplo);
+let audioNovo = 'https://ia800801.us.archive.org/11/items/TheImperialMarch/The-Imperial-March.mp3';
+
+let audioATocar = localStorage.getItem('AUDIO_LOCAL');
+if (!audioATocar)
+  audioATocar = audioExemplo;
+
+let audio = new Audio(audioATocar);
+audio.play();
+
 function criaAudio() {
+  audioATocar = audioNovo;
   audio.pause();
-  audio = new Audio(audioExemplo);
+  audio = new Audio(audioATocar);
   audio.play();
+  localStorage.setItem('AUDIO_LOCAL', audioATocar);
+
 }
 
 let botaoDefinirAudio = document.querySelector("#definir-audio");
