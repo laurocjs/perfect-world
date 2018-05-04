@@ -1,6 +1,7 @@
 // Modal
 let modal = document.querySelector("#modal");
 let backdrop = document.querySelector(".backdrop");
+let botaoFecharModal = document.querySelector(".fechar-modal");
 
 // Elementos do modal
 let tituloModal = document.querySelector(".conteudo-modal .titulo p");
@@ -42,6 +43,7 @@ let trocaImagem = (valor) => {
 let monstroClick = document.querySelector("#monster");
 monstroClick.addEventListener('click', abrirModal);
 backdrop.addEventListener('click', fecharModal);
+botaoFecharModal.addEventListener('click', fecharModal);
 
 
 botaoVoltar.addEventListener('click', () => trocaImagem(-1));
