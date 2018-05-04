@@ -12,7 +12,6 @@ if (!numeroDeVisitas) {
   localStorage.setItem('NUMERO_VISITAS', 1);
 }
 localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VISITAS')) + 1);
-alert(localStorage.getItem('NUMERO_VISITAS'));
 
 // Audio
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';
@@ -39,6 +38,8 @@ botaoDefinirAudio.addEventListener('click', criaAudio);
 
 let botaoVisitas = document.querySelector("#contador-de-visitas");
 botaoVisitas.addEventListener('click', () => {
-  abrirModal();
-  imagemModal.style.display = 'none'
+  alert(localStorage.getItem('NUMERO_VISITAS'));
+
+  // abrirModal();
+  // imagemModal.style.display = 'none'
 });
