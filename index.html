@@ -7,25 +7,23 @@
   <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/estilos-comuns.css">
   <link rel="stylesheet" href="css/estilos-menu.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <link rel="icon" href="resources/images/favicon.png" />
   <title>CraftFolioGotchi®</title>
 </head>
 
 <body>
-   <div id="contador">
-      Contador de visitas: <span id="visits_counter"></span>
-   </div>
+  <div id="contador">
+    Contador de visitas:
+    <span id="visits_counter"></span>
+  </div>
   <section id="sky">
+    </div>
     <header>
       <h1 class="title">
-        O Incrível
-        <span class="emphatic">Monstro Verde</span>
-        <span class="non-important"></span>
+        A página de
+        <span id="user"></span>
       </h1>
-	  <br>
-      <h2 class="subtitle">
-        que Come Pedras e mora debaixo da Terra
-      </h2>
     </header>
   </section>
 
@@ -38,12 +36,21 @@
   <section id="menu">
     <article id="menu-toggle">+</article>
     <section id="menu-itens" class="fechado">
-      <article class="item">Detalhes página</article>
-      <article class="item">Personalizar mundo</article>
-      <article class="item" id="trocarPersonagem">Personagem</article>
-      <article class="item" id="definir-audio">Música</article>
-      <article class="item">Galeria</article>
-      <article class="item">Contador de visitas</article>
+      <article class="item" data-item="1" id="personalzar-pagina">Personalizar página</article>
+      <article class="item" data-item="2"></article>
+      <article class="item" data-item="3">
+        <p>Criar Galeria</p>
+        <input id="evento-musica" name="nome" type="text" placeholder="Título">
+        <input id="evento-musica" name="nome" type="text" placeholder="Descrição">
+        <input id="evento-musica" name="nome" type="text" placeholder="Imagem 1">
+        <input id="evento-musica" name="nome" type="text" placeholder="Imagem 2">
+        <input id="evento-musica" name="nome" type="text" placeholder="Imagem 3">
+      </article>
+      <article class="item" data-item="4" id="trocarPersonagem">Trocar Personagem</article>
+      <article class="item" data-item="5" id="definir-audio">
+        <input id="evento-musica" name="nome" type="text" placeholder="Música">
+      </article>
+      <article class="item" data-item="6" id="contador-de-visitas">Contador</article>
     </section>
   </section>
 
@@ -66,8 +73,8 @@
   </section>
 
   <script type="text/javascript" src="js/modal.js"></script>
-  <script type="text/javascript" src="js/scripts-comuns.js"></script>
   <script type="text/javascript" src="js/personagem.js"></script>
+  <script type="text/javascript" src="js/scripts-comuns.js"></script>
 </body>
 
 </html>
