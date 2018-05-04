@@ -24,13 +24,15 @@ if (audioATocar) {
 }
 
 function criaAudio(novoAudio) {
-  debugger;
   audio.pause();
   audio = new Audio(novoAudio);
   audio.play();
   localStorage.setItem('AUDIO_LOCAL', novoAudio);
 
 }
+document.querySelector("#evento-musica").addEventListener("blur", () => {
+  alert('blurrr');
+});
 
 // let botaoDefinirAudio = document.querySelector("#definir-audio");
 // botaoDefinirAudio.addEventListener('click', criaAudio);
