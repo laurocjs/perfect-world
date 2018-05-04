@@ -9,9 +9,9 @@ document.querySelector("#menu-toggle").addEventListener('click', (event => {
 // Numero de visitas
 let numeroDeVisitas = localStorage.getItem('NUMERO_VISITAS');
 if (!numeroDeVisitas) {
-  localStorage.setItem('NUMERO_VISITAS', +0);
+  localStorage.setItem('NUMERO_VISITAS', 0);
 }
-localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VISITAS')) + +1);
+localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VISITAS')) +1);
 alert(localStorage.getItem('NUMERO_VISITAS'));
 
 // Audio
