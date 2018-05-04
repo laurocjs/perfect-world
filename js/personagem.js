@@ -5,7 +5,10 @@ let posicao = limiteEsquerdo + 1;
 let posicaoy = limiteBaixo + 1;
 let monstro = document.querySelector("#monster");
 window.setInterval(gravidade, 100);
-let type = "pato";
+
+let type = undefined;//localStorage.getItem('TIPO_PERSONAGEM');
+if (!type)
+	type = "pato";
 
 let botaoTrocarPersonagem = document.querySelector("#trocarPersonagem");
 botaoTrocarPersonagem.addEventListener('click', mudaPersonagem);
@@ -82,4 +85,5 @@ function mudaPersonagem() {
 		monstro.classList.add(type + '-parado');
 		return;
 	}
+	//localStorage.setItem('TIPO_PERSONAGEM', type);
 }
