@@ -31,9 +31,7 @@ function criaAudio(novoAudio) {
 
 }
 document.querySelector("#evento-musica").addEventListener("blur", (e) => {
-  e;
-  debugger;
-  criaAudio(e.currentTarget.text);
+  criaAudio(e.currentTarget.value);
 });
 
 // let botaoDefinirAudio = document.querySelector("#definir-audio");
