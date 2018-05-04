@@ -48,3 +48,65 @@ botaoFecharModal.addEventListener('click', fecharModal);
 
 botaoVoltar.addEventListener('click', () => trocaImagem(-1));
 botaoAvancar.addEventListener('click', () => trocaImagem(1));
+
+const setIntro = text => {
+  localStorage.setItem('emphatic', text);
+  $('.emphatic').html(text);
+}
+
+const menuInicial = () => {
+  let menu = 
+  '<article class="item" data-item="1">Trocar Título</article> <article class="item" data-item="2">Trocar Favicon</article> <article class="item" data-item="3">Criar Galeria</article> <article class="item" data-item="4">Trocar Personagem</article> <article class="item" data-item="5">Colocar Música</article> <article class="item" data-item="6">Alterar Textura do Chão</article>';
+  $('#menu-itens').html(menu);
+}
+
+const trocaTitulo = () => {
+  let menu = '<h1>Troca Título</h1><article data-item="0">voltar</article>'
+  $('#menu-itens').html(menu);
+}
+
+const trocaFavicon  = () => {
+  let menu = '<h1>Troca Favicon</h1><article data-item="0">voltar</article>'
+  $('#menu-itens').html(menu);
+}
+
+const criarGaleria  = () => {
+  let menu = '<h1>Criar Galeria</h1><article data-item="0">voltar</article>'
+  $('#menu-itens').html(menu);
+}
+
+const trocarPersonagem  = () => {
+  let menu = '<h1>Troca Personagem</h1><article data-item="0">voltar</article>'
+  $('#menu-itens').html(menu);
+}
+
+const colocarMusica  = () => {
+  let menu = '<h1>Colocar Musica</h1><article data-item="0">voltar</article>'
+  $('#menu-itens').html(menu);
+}
+
+const alterarChao  = () => {
+  let menu = '<h1>Alterar Galeria</h1><article data-item="0">voltar</article>'
+  $('#menu-itens').html(menu);
+}
+
+$("#menu-itens").on('click', 'article', 
+  (res) => {
+    let item = $(res.target).data('item');
+    let text = 'Item ' + item;
+    if (item == 0)
+      menuInicial();
+    else if (item == 1)
+      trocaTitulo();
+    else if (item == 2)
+      trocaFavicon();
+    else if (item == 3)
+      criarGaleria();
+    else if (item == 4)
+      trocarPersonagem();
+    else if (item == 5)
+      colocarMusica();
+    else if (item == 6)
+      alterarChao();
+  }
+);

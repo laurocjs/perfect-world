@@ -62,6 +62,7 @@
   transition: opacity 2s .3s, height 1s .3s;
   cursor: move;
   cursor: -moz-grab;
+  text-align: center;  
 }
 
 #menu-itens.aberto .item {
