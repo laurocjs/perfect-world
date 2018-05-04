@@ -12,6 +12,7 @@ if (!numeroDeVisitas) {
   localStorage.setItem('NUMERO_VISITAS', 1);
 }
 localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VISITAS')) + 1);
+document.querySelector("#visits_counter").innerHTML=localStorage.getItem('NUMERO_VISITAS');
 
 // Audio
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';
