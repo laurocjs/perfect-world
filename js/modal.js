@@ -49,9 +49,9 @@ botaoAvancar.addEventListener('click', () => trocaImagem(1));
 
 document.querySelector("#evento-galeria").addEventListener("blur", (e) => {
 
-  let listaValores = document.querySelector(".valor-imagem");
+  let listaValores = document.querySelectorAll(".valor-imagem");
   let titulo = document.querySelector(".valor-titulo").value;
-  let desc = document.querySelectorAll(".valor-desc").value;
+  let desc = document.querySelector(".valor-desc").value;
 
   let lista = [];
   for (let elemento of listaValores) {
