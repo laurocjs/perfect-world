@@ -62,7 +62,12 @@
   transition: opacity 2s .3s, height 1s .3s;
   cursor: move;
   cursor: -moz-grab;
-  text-align: center;  
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
 }
 
 #menu-itens.aberto .item {
@@ -77,4 +82,16 @@
 
 #menu-itens.aberto .item:active:hover {
   cursor: -moz-grabbing;
+}
+
+input {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50%;
+  box-sizing: border-box;
+	outline: none;
+	border: none;
+  border-bottom: solid 1px rebeccapurple;
+  background-color: transparent;
+	margin-top: 16px;
 }

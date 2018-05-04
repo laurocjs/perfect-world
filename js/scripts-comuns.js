@@ -31,17 +31,12 @@ function criaAudio(novoAudio) {
   localStorage.setItem('AUDIO_LOCAL', novoAudio);
 
 }
+
 document.querySelector("#evento-musica").addEventListener("blur", (e) => {
   criaAudio(e.currentTarget.value);
 });
 
-// let botaoDefinirAudio = document.querySelector("#definir-audio");
-// botaoDefinirAudio.addEventListener('click', criaAudio);
-
 let botaoVisitas = document.querySelector("#contador-de-visitas");
 botaoVisitas.addEventListener('click', () => {
   alert(localStorage.getItem('NUMERO_VISITAS'));
-
-  // abrirModal();
-  // imagemModal.style.display = 'none'
 });

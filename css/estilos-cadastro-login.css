@@ -30,7 +30,7 @@ form {
 	display: none;
 }
 
- input {
+.form-item input {
 	width: 100%;
 	display: flex;
 	justify-content: center;
