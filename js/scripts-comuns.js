@@ -17,13 +17,13 @@ localStorage.setItem('NUMERO_VISITAS', parseInt(localStorage.getItem('NUMERO_VIS
 let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';
 
 let audioATocar = localStorage.getItem('AUDIO_LOCAL');
-if (!audioATocar)
-  audioATocar = audioExemplo;
-
-let audio = new Audio(audioATocar);
-audio.play();
+if (audioATocar) {
+  let audio = new Audio(audioATocar);
+  audio.play();
+}
 
 function criaAudio(novoAudio) {
+  debugger;
   audio.pause();
   audio = new Audio(novoAudio);
   audio.play();

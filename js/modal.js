@@ -97,6 +97,7 @@ const colocarMusica = () => {
     '</article>' +
     '</form>';
   $('#menu-itens').html(menu);
+  debugger;
   $(".target").change((e) => {
     e;
     debugger;
