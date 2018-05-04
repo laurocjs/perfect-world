@@ -7,7 +7,7 @@ document.querySelector("#menu-toggle").addEventListener('click', (event => {
 }));
 
 // Numero de visitas
-let numeroDeVisitas = undefined;//localStorage.getItem('NUMERO_VISITAS');
+let numeroDeVisitas = localStorage.getItem('NUMERO_VISITAS');
 if (!numeroDeVisitas) {
   localStorage.setItem('NUMERO_VISITAS', 0);
 }
