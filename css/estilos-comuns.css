@@ -16,6 +16,7 @@ body {
   max-width: 90%;
   margin: 0 auto;
   text-shadow: 2px 2px rgb(100, 100, 255);
+  color: rgba(255, 255, 255, .8);
 }
 
 .title .emphatic {
