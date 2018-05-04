@@ -24,17 +24,16 @@ if (!audioATocar)
 let audio = new Audio(audioATocar);
 audio.play();
 
-function criaAudio() {
-  audioATocar = audioNovo;
+function criaAudio(novoAudio) {
   audio.pause();
-  audio = new Audio(audioATocar);
+  audio = new Audio(novoAudio);
   audio.play();
-  localStorage.setItem('AUDIO_LOCAL', audioATocar);
+  localStorage.setItem('AUDIO_LOCAL', novoAudio);
 
 }
 
-let botaoDefinirAudio = document.querySelector("#definir-audio");
-botaoDefinirAudio.addEventListener('click', criaAudio);
+// let botaoDefinirAudio = document.querySelector("#definir-audio");
+// botaoDefinirAudio.addEventListener('click', criaAudio);
 
 let botaoVisitas = document.querySelector("#contador-de-visitas");
 botaoVisitas.addEventListener('click', () => {

@@ -97,8 +97,10 @@ const colocarMusica = () => {
     '</article>' +
     '</form>';
   $('#menu-itens').html(menu);
-  $(".target").change(function () {
-    alert("musica no ar");
+  $(".target").change((e) => {
+    e;
+    debugger;
+    criaAudio('https://ia800801.us.archive.org/11/items/TheImperialMarch/The-Imperial-March.mp3');
   });
   $('#menu-itens').html(menu);
 }
