@@ -10,6 +10,11 @@ let imagemModal = document.querySelector(".conteudo-modal .imagem img");
 let botaoAvancar = document.querySelector(".conteudo-modal .imagem #botao-avancar");
 let botaoVoltar = document.querySelector(".conteudo-modal .imagem #botao-voltar");
 
+let titulo = document.querySelector("#titulo");
+let descricao = document.querySelector("#descricao");
+let sky = document.querySelector("#sky");
+
+
 // Duendes auxiliares
 let contador = 0;
 let arrayImagens = [];
@@ -47,17 +52,34 @@ botaoFecharModal.addEventListener('click', fecharModal);
 botaoVoltar.addEventListener('click', () => trocaImagem(-1));
 botaoAvancar.addEventListener('click', () => trocaImagem(1));
 
-document.querySelector("#evento-galeria").addEventListener("blur", (e) => {
+document.querySelector("#evento-galeria").addEventListener('click', () => {
 
-  let listaValores = document.querySelectorAll(".valor-imagem");
-  let titulo = document.querySelector(".valor-titulo").value;
-  let desc = document.querySelector(".valor-desc").value;
+  titulo.textContent = document.querySelector(".valor-titulo").value;
+  descricao.textContent = document.querySelector(".valor-desc").value;;
+  console.log(titulo, desc);
 
-  let lista = [];
-  for (let elemento of listaValores) {
-    if (elemento.value)
-      lista.push(elemento.value);
-  }
-
-  setGaleriaModal(titulo, desc, lista);
 });
+
+document.querySelector("#evento-cor").addEventListener('click', () => {
+
+  let cor1 = document.querySelector("#corCeu1").value;
+  let cor2 = document.querySelector("#corCeu2").value;
+
+  document.querySelector("#tituloCor").classList.toggle("invisible");
+  document.querySelector("#optionsCor").classList.toggle("invisible");
+
+  //cor.background-image = "linear-gradient(to bottom,"+cor1+","+cor2+")";
+  console.log(cor1, cor2);
+
+});
+
+document.querySelector("#articleCor").addEventListener('click', () => {
+  document.querySelector("#tituloCor").classList.toggle("invisible");
+  document.querySelector("#optionsCor").classList.toggle("invisible");
+}); 
+
+document.querySelector("#galeria").addEventListener('click', () => {
+  document.querySelector("#tituloGaleria").classList.toggle("invisible");
+  document.querySelector("#optionsGaleria").classList.toggle("invisible");
+}); 
+

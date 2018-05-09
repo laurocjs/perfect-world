@@ -99,3 +99,28 @@
     right: 0;
   }
 }
+
+.botao-modal {
+  font-size: 10px;
+  width: 50%;
+  height: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.botao-modal:hover {
+  color: blue;
+}
+
+section {
+  margin-bottom: 10px;
+}
+
+.invisible {
+  display: none;
+}
+
+#menu-itens article {
+  padding-top: 16px;
+}
