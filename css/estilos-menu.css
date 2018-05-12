@@ -15,7 +15,7 @@
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  background-color: rgb(44, 138, 247);;
+  background-color: rgb(44, 138, 247);
   color: #fff;
   font-size: 50px;
   line-height: 50px;
@@ -82,6 +82,14 @@
 
 #menu-itens.aberto .item:active:hover {
   cursor: -moz-grabbing;
+}
+
+#menu-itens input {
+  margin-top: 6px;
+}
+
+#menu-itens button {
+  margin-top: 16px;
 }
 
 input {

@@ -2,6 +2,7 @@
 let modal = document.querySelector("#modal");
 let backdrop = document.querySelector(".backdrop");
 let botaoFecharModal = document.querySelector(".fechar-modal");
+let buttonMenu = document.querySelector("#menu-toggle");
 
 // Elementos do modal
 let tituloModal = document.querySelector(".conteudo-modal .titulo p");
@@ -100,4 +101,22 @@ document.querySelector("#cloud").addEventListener('click', () => {
     document.querySelector("#sky").classList.add("cloud");
 });
 
+//Edição do Chão
+document.querySelector("#ground1").addEventListener('click', () => {
+    document.querySelector("#earth").classList.remove("ground-2");
+    document.querySelector("#earth").classList.add("ground-1");
+});
 
+document.querySelector("#ground2").addEventListener('click', () => {
+    document.querySelector("#earth").classList.remove("ground-1");
+    document.querySelector("#earth").classList.add("ground-2");
+});
+
+//Botão do modal
+buttonMenu.addEventListener('click', () => {
+  if (buttonMenu.innerHTML === '+'){
+    buttonMenu.innerHTML = '-'
+  } else {
+    buttonMenu.innerHTML = '+'
+  }  
+});

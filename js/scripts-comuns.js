@@ -36,8 +36,8 @@ document.querySelector("#evento-musica").addEventListener("blur", (e) => {
   criaAudio(e.currentTarget.value);
 });
 
-let botaoVisitas = document.querySelector("#contador-de-visitas");
+/*let botaoVisitas = document.querySelector("#contador-de-visitas");
 botaoVisitas.addEventListener('click', () => {
   alert(localStorage.getItem('NUMERO_VISITAS'));
-});
+});*/
 

@@ -24,7 +24,7 @@
     </header>
   </section>
 
-  <section id="earth">
+  <section id="earth" class="ground-1">
     <div id="monster-container">
       <div id="monster"></div>
     </div>
@@ -33,13 +33,22 @@
   <section id="menu">
     <article id="menu-toggle">+</article>
     <section id="menu-itens" class="fechado">
-      <article class="item" data-item="4" id="trocarPersonagem">Trocar Personagem</article>
+      <article class="item" id="trocarPersonagem">Trocar Personagem</article>
 
-      <article class="item" data-item="4" id="trocarPersonagem">Galeria de Imagens</article>
+      <article id="texto" class="item" data-item="3">
+        <p id="tituloTexto">Caixa de Texto</p>
+        <section id="optionsTexto" class="invisible">
+          <article><strong>Título</strong></article>
+          <input id="titulo" class="valor-titulo" name="nome" type="text">
+          <article><strong>Descrição</strong></article>
+          <input id="desc" class="valor-desc" name="nome" type="text">
+          <button id="evento-texto" class="botao-modal">Confirma</button>  
+        </section>
+      </article>
 
       <article id="fundo" class="item" data-item="2">
-          <strong id="tituloCor">Fundo da página</strong>
-          <article id="optionsCor">
+          <strong>Fundo da página</strong>
+          <article>
               <section id="rain">Chuva</section>
               <section id="stars">Estrelas</section>
               <section id="moon">Lua</section>
@@ -47,30 +56,20 @@
           </article>
       </article>
 
-      <article id="texto" class="item" data-item="3">
-        <p id="tituloTexto">Caixa de Texto</p>
-        <section id="optionsTexto" class="invisible">
-          <section>
-            <label>Título do Texto</label>
-            <input id="titulo" class="valor-titulo" name="nome" type="text">
-          </section>
-          <section>
-            <label>Descrição</label>
-            <input id="desc" class="valor-desc" name="nome" type="text">
-          </section>
-          <button id="evento-texto" class="botao-modal">Confirma</button>
-        </section>
+      <article id="fundo" class="item" data-item="1">
+        <strong>Chão</strong>
+          <article>
+              <section id="ground1">Opção 1</section>
+              <section id="ground2">Opção 2</section>        
+          </article>
       </article>
 
-      <article class="item" data-item="1" id="personalzar-pagina">
-        <label>Chão</label>
-      </article>      
+      <article class="item" >Galeria de Imagens</article>
 
-      <article class="item" data-item="5" id="definir-audio">
+      <article class="item" id="definir-audio">
         <input id="evento-musica" name="nome" type="text" placeholder="Música">
       </article>
 
-      <article class="item" data-item="6" id="contador-de-visitas">Contador</article>
     </section>
   </section>
 

@@ -127,10 +127,17 @@ body {
 #earth {
   position: relative;
   top: -10px;
-  height: calc(50% + 5px);
-  background-image: url('../resources/images/ground-1.jpeg');
+  height: calc(50% + 5px);  
   text-align: center;
   box-sizing: border-box;
+}
+
+.ground-1 {
+	background-image: url('../resources/images/ground-1.jpeg');
+}
+
+.ground-2 {
+	background-image: url('../resources/images/tiles-big.png');
 }
 
 #contador{
