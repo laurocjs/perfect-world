@@ -33,7 +33,7 @@ body {
 
 #sky {
   position: relative;  
-  height: 50%;
+  height: 80%;
   box-sizing: border-box;
 }
 
@@ -126,10 +126,9 @@ body {
 
 #earth {
   position: relative;
-  top: -5px;
+  top: -10px;
   height: calc(50% + 5px);
-  background-image: url('../resources/images/tiles-big.png');
-  background-repeat: repeat-x;
+  background-image: url('../resources/images/ground-1.jpeg');
   text-align: center;
   box-sizing: border-box;
 }
