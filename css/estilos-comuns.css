@@ -11,12 +11,16 @@ body {
 }
 
 .title, .subtitle {
-  font-family: 'Ravie', serif;
+  font-family: 'Calibri', 'Verdana', sans-serif;
   text-align: center;
   max-width: 90%;
   margin: 0 auto;
   text-shadow: 2px 2px rgb(100, 100, 255);
   color: rgba(255, 255, 255, 1);
+}
+
+.title {
+   font-size: 2.5em;
 }
 
 .title .emphatic {

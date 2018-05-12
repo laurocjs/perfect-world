@@ -13,6 +13,11 @@
 </head>
 
 <body>
+
+  <div class="invisible">
+    <audio id="music" src="" autoplay loop></audio>
+  </div>
+
   <div id="contador">
     Contador de visitas:
     <span id="visits_counter"></span>
@@ -67,7 +72,9 @@
       <article class="item" >Galeria de Imagens</article>
 
       <article class="item" id="definir-audio">
-        <input id="evento-musica" name="nome" type="text" placeholder="Música">
+        <article><strong>Áudio</strong></article>
+        <input id="url-musica" name="nome" type="text">
+        <button id="evento-musica" class="botao-modal">Confirma</button> 
       </article>
 
     </section>

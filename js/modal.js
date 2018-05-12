@@ -11,11 +11,6 @@ let imagemModal = document.querySelector(".conteudo-modal .imagem img");
 let botaoAvancar = document.querySelector(".conteudo-modal .imagem #botao-avancar");
 let botaoVoltar = document.querySelector(".conteudo-modal .imagem #botao-voltar");
 
-let titulo = document.querySelector("#titulo");
-let descricao = document.querySelector("#descricao");
-let sky = document.querySelector("#sky");
-
-
 // Duendes auxiliares
 let contador = 0;
 let arrayImagens = [];
@@ -52,65 +47,6 @@ botaoFecharModal.addEventListener('click', fecharModal);
 
 botaoVoltar.addEventListener('click', () => trocaImagem(-1));
 botaoAvancar.addEventListener('click', () => trocaImagem(1));
-
-//Edição da Caixa de texto
-document.querySelector("#evento-texto").addEventListener('click', () => {
-  document.querySelector("#tituloTexto").classList.remove("invisible");
-  document.querySelector("#optionsTexto").classList.add("invisible");
-
-  titulo.textContent = document.querySelector(".valor-titulo").value;
-  descricao.textContent = document.querySelector(".valor-desc").value;
-  activeText = false;
-});
-
-var activeText = false;
-document.querySelector("#texto").addEventListener('click', () => {
-  if (!activeText){
-    document.querySelector("#tituloTexto").classList.toggle("invisible");
-    document.querySelector("#optionsTexto").classList.toggle("invisible");
-    activeText = true;
-  }  
-});
-
-//Edição do Fundo da página
-document.querySelector("#rain").addEventListener('click', () => {
-    document.querySelector("#sky").classList.remove("moon");
-    document.querySelector("#sky").classList.remove("stars");
-    document.querySelector("#sky").classList.remove("cloud");
-    document.querySelector("#sky").classList.add("rain");
-});
-
-document.querySelector("#moon").addEventListener('click', () => {
-    document.querySelector("#sky").classList.remove("rain");
-    document.querySelector("#sky").classList.remove("stars");
-    document.querySelector("#sky").classList.remove("cloud");
-    document.querySelector("#sky").classList.add("moon");
-});
-
-document.querySelector("#stars").addEventListener('click', () => {  
-    document.querySelector("#sky").classList.remove("moon");
-    document.querySelector("#sky").classList.remove("rain");
-    document.querySelector("#sky").classList.remove("cloud");
-    document.querySelector("#sky").classList.add("stars");
-});
-
-document.querySelector("#cloud").addEventListener('click', () => {
-    document.querySelector("#sky").classList.remove("moon");
-    document.querySelector("#sky").classList.remove("stars");
-    document.querySelector("#sky").classList.remove("rain");
-    document.querySelector("#sky").classList.add("cloud");
-});
-
-//Edição do Chão
-document.querySelector("#ground1").addEventListener('click', () => {
-    document.querySelector("#earth").classList.remove("ground-2");
-    document.querySelector("#earth").classList.add("ground-1");
-});
-
-document.querySelector("#ground2").addEventListener('click', () => {
-    document.querySelector("#earth").classList.remove("ground-1");
-    document.querySelector("#earth").classList.add("ground-2");
-});
 
 //Botão do modal
 buttonMenu.addEventListener('click', () => {
