@@ -33,11 +33,13 @@ body {
 
 #sky {
   position: relative;
+  background: url("https://media.giphy.com/media/10539PNHnSuPTi/giphy.gif");
   /* for the rocks-container */
-  background-image: linear-gradient(to bottom, #6481E5, #8AB3E2);
+  /*background-image: linear-gradient(to bottom, #6481E5, #8AB3E2);
+
   background-position: 0 0;
   background-repeat: no-repeat;
-  padding-top: 20px;
+  padding-top: 20px;*/
   height: 50%;
   box-sizing: border-box;
 }
@@ -129,3 +131,4 @@ body {
 	z-index: 2;
 	color: white;
 }
+

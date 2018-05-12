@@ -17,13 +17,11 @@
     Contador de visitas:
     <span id="visits_counter"></span>
   </div>
-  <section id="sky">
+  <section id="sky" >
     </div>
     <header>
-      <h1 class="title">
-        <span id="titulo" class="title"></span>
-        <span id="descricao" class="subtitle"></span>        
-      </h1>
+      <h1 id="titulo" class="title">
+      <h2 id="descricao" class="subtitle" ></span>
     </header>
   </section>
 
@@ -33,35 +31,58 @@
     </div>
   </section>
 
+  <div id="plaquinha">
+    <img src="">
+  </div>
+
+  <div id="outdoor">
+    <img src="">
+  </div>
+
+  <div id="audio">
+    <audio>
+    </audio>
+  </div>
+
   <section id="menu">
     <article id="menu-toggle">+</article>
     <section id="menu-itens" class="fechado">
-      <article class="item" data-item="1" id="personalzar-pagina">
-        <label>Personalizar página</label>
-      </article>
+      <article class="item" data-item="4" id="trocarPersonagem">Trocar Personagem</article>
+
+      <article class="item" data-item="4" id="trocarPersonagem">Galeria de Imagens</article>
+
       <article id="articleCor" class="item" data-item="2">
-          <p id="tituloCor">Cor de fundo</p>
+          <p id="tituloCor">Fundo da página</p>
           <section id="optionsCor" class="invisible">
             <section><label>Cor de fundo 1 <input type="color" id="corCeu1"></label></section>
             <section><label>Cor de fundo 2 <input type="color" id="corCeu2"></label></section>
             <button id="evento-cor" class="botao-modal">Confirma</button>
           </section>
       </article>
-      <article id="galeria" class="item" data-item="3">
-        <p id="tituloGaleria">Criar Galeria</p>
-        <section id="optionsGaleria" class="invisible">
-          <input id="titulo" class="valor-titulo" name="nome" type="text" placeholder="Título">
-          <input id="desc" class="valor-desc" name="nome" type="text" placeholder="Descrição">
-          <input id="imagem1"  name="nome" type="file" placeholder="Imagem 1">
-          <input id="imagem2"  name="nome" type="file" placeholder="Imagem 2">
-          <input id="imagem3"  name="nome" type="file" placeholder="Imagem 3">
-          <button id="evento-galeria" class="botao-modal">Confirma</button>
+
+      <article id="texto" class="item" data-item="3">
+        <p id="tituloTexto">Caixa de Texto</p>
+        <section id="optionsTexto" class="invisible">
+          <section>
+            <label>Título do Texto</label>
+            <input id="titulo" class="valor-titulo" name="nome" type="text">
+          </section>
+          <section>
+            <label>Descrição</label>
+            <input id="desc" class="valor-desc" name="nome" type="text">
+          </section>
+          <button id="evento-texto" class="botao-modal">Confirma</button>
         </section>
       </article>
-      <article class="item" data-item="4" id="trocarPersonagem">Trocar Personagem</article>
+
+      <article class="item" data-item="1" id="personalzar-pagina">
+        <label>Chão</label>
+      </article>      
+
       <article class="item" data-item="5" id="definir-audio">
         <input id="evento-musica" name="nome" type="text" placeholder="Música">
       </article>
+
       <article class="item" data-item="6" id="contador-de-visitas">Contador</article>
     </section>
   </section>

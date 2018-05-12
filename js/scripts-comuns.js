@@ -40,3 +40,4 @@ let botaoVisitas = document.querySelector("#contador-de-visitas");
 botaoVisitas.addEventListener('click', () => {
   alert(localStorage.getItem('NUMERO_VISITAS'));
 });
+
