@@ -52,34 +52,52 @@ botaoFecharModal.addEventListener('click', fecharModal);
 botaoVoltar.addEventListener('click', () => trocaImagem(-1));
 botaoAvancar.addEventListener('click', () => trocaImagem(1));
 
-document.querySelector("#evento-galeria").addEventListener('click', () => {
+//Edição da Caixa de texto
+document.querySelector("#evento-texto").addEventListener('click', () => {
+  document.querySelector("#tituloTexto").classList.remove("invisible");
+  document.querySelector("#optionsTexto").classList.add("invisible");
 
   titulo.textContent = document.querySelector(".valor-titulo").value;
-  descricao.textContent = document.querySelector(".valor-desc").value;;
-  console.log(titulo, desc);
-
+  descricao.textContent = document.querySelector(".valor-desc").value;
+  activeText = false;
 });
 
-document.querySelector("#evento-cor").addEventListener('click', () => {
-
-  let cor1 = document.querySelector("#corCeu1").value;
-  let cor2 = document.querySelector("#corCeu2").value;
-
-  document.querySelector("#tituloCor").classList.toggle("invisible");
-  document.querySelector("#optionsCor").classList.toggle("invisible");
-
-  //cor.background-image = "linear-gradient(to bottom,"+cor1+","+cor2+")";
-  console.log(cor1, cor2);
-
+var activeText = false;
+document.querySelector("#texto").addEventListener('click', () => {
+  if (!activeText){
+    document.querySelector("#tituloTexto").classList.toggle("invisible");
+    document.querySelector("#optionsTexto").classList.toggle("invisible");
+    activeText = true;
+  }  
 });
 
-document.querySelector("#articleCor").addEventListener('click', () => {
-  document.querySelector("#tituloCor").classList.toggle("invisible");
-  document.querySelector("#optionsCor").classList.toggle("invisible");
-}); 
+//Edição do Fundo da página
+document.querySelector("#rain").addEventListener('click', () => {
+    document.querySelector("#sky").classList.remove("moon");
+    document.querySelector("#sky").classList.remove("stars");
+    document.querySelector("#sky").classList.remove("cloud");
+    document.querySelector("#sky").classList.add("rain");
+});
 
-document.querySelector("#galeria").addEventListener('click', () => {
-  document.querySelector("#tituloGaleria").classList.toggle("invisible");
-  document.querySelector("#optionsGaleria").classList.toggle("invisible");
-}); 
+document.querySelector("#moon").addEventListener('click', () => {
+    document.querySelector("#sky").classList.remove("rain");
+    document.querySelector("#sky").classList.remove("stars");
+    document.querySelector("#sky").classList.remove("cloud");
+    document.querySelector("#sky").classList.add("moon");
+});
+
+document.querySelector("#stars").addEventListener('click', () => {  
+    document.querySelector("#sky").classList.remove("moon");
+    document.querySelector("#sky").classList.remove("rain");
+    document.querySelector("#sky").classList.remove("cloud");
+    document.querySelector("#sky").classList.add("stars");
+});
+
+document.querySelector("#cloud").addEventListener('click', () => {
+    document.querySelector("#sky").classList.remove("moon");
+    document.querySelector("#sky").classList.remove("stars");
+    document.querySelector("#sky").classList.remove("rain");
+    document.querySelector("#sky").classList.add("cloud");
+});
+
 
