@@ -1,0 +1,23 @@
+{
+  "name": "perfect-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "\t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurocjs/perfect-world.git"
+  },
+  "author": "Daniel, Lauro e Lucas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurocjs/perfect-world/issues"
+  },
+  "homepage": "https://github.com/laurocjs/perfect-world#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "underscore": "^1.9.1"
+  }
+}
