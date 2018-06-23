@@ -1,16 +1,8 @@
-.btn:focus, .upload-btn:focus{
-  outline: 0 !important;
-}
 
-.upload-btn:hover,
-.upload-btn:focus,
-.upload-btn:active,
-.upload-btn.active {
-  color: #ffffff;
-  background-color: #FA8900;
-  border: none;
+.btn {
+  margin-bottom: 10%;
+  margin-top: 0;
 }
-
 
 #upload-input {
   display: none;
@@ -29,5 +21,8 @@
 }
 
 .progress{
-  width: 100%
+  margin-top: 10%;
+  width: 100%;
+  height: 150%;
 }
+

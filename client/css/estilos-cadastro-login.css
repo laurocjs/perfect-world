@@ -70,3 +70,7 @@ form button {
 	cursor: pointer;
 	border-radius: 3px;
 }
+
+ul {
+	margin-top: '10px'
+}

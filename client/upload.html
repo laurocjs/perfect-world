@@ -9,20 +9,21 @@
     <link rel="stylesheet" href="css/estilos-comuns.css">
     <link rel="stylesheet" href="css/estilos-cadastro-login.css"> 
 </head>
-<body>
-
+<body>   
   <main>
-    <form>
+    <form>            
       <div>
-        <h1>Upload de Arquivos</h1>
+        <h1>Upload de Arquivos</h1>        
         <article class="form-item">
           <div class="progress">
             <div class="progress-bar" role="progressbar"></div>
           </div>
         </article>  
         <button class="btn btn-lg upload-btn" type="button">Upload</button>
-      </div>
-      <form>
+        <button class="hide"id="view-btn" type="button">Mostrar Arquivos</button>
+        <div id = "menu-itens" ></div>
+      </div>      
+    </form>      
   </main>
 
   <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
