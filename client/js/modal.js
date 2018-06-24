@@ -47,12 +47,3 @@ botaoFecharModal.addEventListener('click', fecharModal);
 
 botaoVoltar.addEventListener('click', () => trocaImagem(-1));
 botaoAvancar.addEventListener('click', () => trocaImagem(1));
-
-//Botão do modal
-buttonMenu.addEventListener('click', () => {
-  if (buttonMenu.innerHTML === '+'){
-    buttonMenu.innerHTML = '-'
-  } else {
-    buttonMenu.innerHTML = '+'
-  }  
-});

@@ -41,19 +41,19 @@ body {
   box-sizing: border-box;
 }
 
-.rain {
+#sky.rain {
 	background: url("../resources/images/rain.gif");
 }
 
-.stars {
+#sky.stars {
 	background: url("../resources/images/stars.gif");
 }
 
-.cloud {
+#sky.clouds {
 	background: url("../resources/images/clouds.gif");
 }
 
-.moon {
+#sky.sky {
 	background: url("../resources/images/sky.gif");
 }
 

@@ -6,9 +6,11 @@ let posicaoy = limiteBaixo + 1;
 let monstro = document.querySelector("#monster");
 window.setInterval(gravidade, 100);
 
-let type = localStorage.getItem('TIPO_PERSONAGEM');
+let type = monstro.dataset.character;
 if (!type)
 	type = "pato";
+
+monstro.classList.add(type + '-parado');
 
 let botaoTrocarPersonagem = document.querySelector("#trocarPersonagem");
 botaoTrocarPersonagem.addEventListener('click', mudaPersonagem);

@@ -1,6 +1,5 @@
-
 var express = require('express'),
-	fs = require("fs"),
+	fs = require('fs'),
   app = express(),
 	path = require('path'),
 	formidable = require('formidable');
@@ -13,14 +12,24 @@ app.listen(3000, function () {
 });
 
 var db = {
-  uploads: JSON.parse(fs.readFileSync('server/data/uploads.json'))
+  // uploads: JSON.parse(fs.readFileSync('server/data/uploads.json'))
 }
 
 app.set('view engine', 'hbs');
 app.set('views', 'server/views');
 
+db.page_title = 'TESTE LOKO';
+db.browser_title = 'Titulo janela';
+db.character_class = 'coelho';
+db.background_item = 1;
+// db.background_music = 'sample_audio02.mp3';
+
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.render('index', db);
+});
+
+app.get('/login', function(req, res){
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 app.post('/upload', function(req, res){

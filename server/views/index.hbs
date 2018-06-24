@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/estilos-comuns.css">
+  <link rel="stylesheet" href="css/estilos-menu.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="icon" href="resources/images/favicon.png" />
+  <title>{{browser_title}} - CraftFolioGotchi®</title>
+</head>
+
+<body>
+
+  <div class="invisible">
+
+    <audio id="music" src="{{background_music}}" autoplay loop></audio>
+  </div>
+
+  <div id="contador">
+    Contador de visitas:
+    <span id="visits_counter">{{visits_counter}}</span>
+  </div>
+  <section id="sky">
+    <header>
+      <h1 id="titulo" class="title">{{page_title}}
+        <h2 id="descricao" class="subtitle">{{page_subtitle}}
+          </span>
+    </header>
+  </section>
+
+  <section id="earth" class="ground-1">
+    <div id="monster-container">
+      <div id="monster" data-character="{{character_class}}" class=""></div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <section id="menu-toggle-area">
+      <article id="menu-toggle" class="item">
+      </article>
+    </section>
+
+    <section>
+      <article id="trocarPersonagem" class="item">
+      </article>
+
+      <article id="texto" class="item" data-item="3">
+        {{!--
+        <section id="optionsTexto" class="invisible">
+          <article>
+            <strong>Título</strong>
+          </article>
+          <input id="titulo" class="valor-titulo" name="nome" type="text">
+          <article>
+            <strong>Descrição</strong>
+          </article>
+          <input id="desc" class="valor-desc" name="nome" type="text">
+          <button id="evento-texto" class="botao-modal">Confirma</button>
+        </section> --}}
+      </article>
+
+      <article id="background-button" class="item" data-item="{{background_item}}">
+      </article>
+
+      <article id="ground-button" class="item" data-item="{{ground_item}}">
+      </article>
+
+      <article id="slides" class="item"></article>
+
+      <article id="definir-audio" class="item">
+      </article>
+    </section>
+  </section>
+
+  <section id="modal">
+    <article class="fechar-modal"></article>
+    <article class="backdrop"></article>
+    <section class="conteudo-modal">
+      <article class="titulo">
+        <p></p>
+      </article>
+      <article class="descricao">
+        <p></p>
+      </article>
+      <article class="imagem">
+        <button class="botao" id="botao-voltar">&lt;</button>
+        <img src="">
+        <button class="botao" id="botao-avancar">&gt;</button>
+      </article>
+    </section>
+  </section>
+
+  <script type="text/javascript" src="js/modal.js"></script>
+  <script type="text/javascript" src="js/personagem.js"></script>
+  <script type="text/javascript" src="js/scripts-comuns.js"></script>
+  <script type="text/javascript" src="js/animation.js"></script>
+</body>
+
+</html>
