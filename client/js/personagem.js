@@ -3,90 +3,88 @@ let limiteBaixo = 0;
 let limiteDireito = 10000;
 let posicao = limiteEsquerdo + 1;
 let posicaoy = limiteBaixo + 1;
-let monstro = document.querySelector("#monster");
+let jogador = document.querySelector("#player");
 window.setInterval(gravidade, 100);
 
-let type = monstro.dataset.character;
+let type = jogador.dataset.character;
 if (!type)
 	type = "pato";
 
-monstro.classList.add(type + '-parado');
+jogador.classList.add(type + '-parado');
 
-let botaoTrocarPersonagem = document.querySelector("#trocarPersonagem");
-botaoTrocarPersonagem.addEventListener('click', mudaPersonagem);
-
+if (document.querySelector("#trocarPersonagem")) {
+	let botaoTrocarPersonagem = document.querySelector("#trocarPersonagem");
+	botaoTrocarPersonagem.addEventListener('click', mudaPersonagem);
+}
 
 function gravidade() {
 	if (posicaoy < 0) {
 		posicaoy += 10;
-		monstro.style.marginTop = posicaoy + "px";
+		jogador.style.marginTop = posicaoy + "px";
 		if (posicaoy >= 0)
-			monstro.classList.remove(type + '-pulo');
-		monstro.classList.add(type + '-parado');
+			jogador.classList.remove(type + '-pulo');
+		jogador.classList.add(type + '-parado');
 	}
 }
 
 document.addEventListener('keydown', (event => {
 	if (event.keyCode == 37 && posicao > limiteEsquerdo) {
 		posicao -= 5;
-		monstro.style.marginLeft = posicao + "px";
-		monstro.classList.remove(type + '-parado');
-		monstro.classList.remove(type + '-direita');
-		monstro.classList.add(type + '-esquerda');
+		jogador.style.marginLeft = posicao + "px";
+		jogador.classList.remove(type + '-parado');
+		jogador.classList.remove(type + '-direita');
+		jogador.classList.add(type + '-esquerda');
 	}
 	if (event.keyCode == 39 && posicao < limiteDireito) {
-		if (posicao < window.innerWidth - monstro.clientWidth) {
+		if (posicao < window.innerWidth - jogador.clientWidth) {
 			posicao += 5;
-			monstro.style.marginLeft = posicao + "px";
+			jogador.style.marginLeft = posicao + "px";
 		}
-		monstro.classList.remove(type + '-parado');
-		monstro.classList.remove(type + '-esquerda');
-		monstro.classList.add(type + '-direita');
+		jogador.classList.remove(type + '-parado');
+		jogador.classList.remove(type + '-esquerda');
+		jogador.classList.add(type + '-direita');
 	}
 	if (event.keyCode == 38 && posicao < limiteDireito) {
-		monstro.classList.remove(type + '-esquerda');
-		monstro.classList.remove(type + '-direita');
-		monstro.classList.remove(type + '-parado');
+		jogador.classList.remove(type + '-esquerda');
+		jogador.classList.remove(type + '-direita');
+		jogador.classList.remove(type + '-parado');
 		if (posicaoy >= 0) {
-			monstro.classList.add(type + '-pulo');
+			jogador.classList.add(type + '-pulo');
 			posicaoy -= 50;
-			monstro.style.marginTop = posicaoy + "px";
+			jogador.style.marginTop = posicaoy + "px";
 		}
 	}
-	//if (event.keyCode == 40 && posicao < limiteDireito) {
-	//  posicaoy += 50;
-	//  monstro.style.marginTop = posicaoy + "px";
-	//}
 }));
 
 document.addEventListener('keyup', (event => {
 	if (event.keyCode == 37 && posicao > limiteEsquerdo) {
-		monstro.classList.remove(type + '-esquerda');
-		monstro.classList.remove(type + '-direita');
-		monstro.classList.add(type + '-parado');
+		jogador.classList.remove(type + '-esquerda');
+		jogador.classList.remove(type + '-direita');
+		jogador.classList.add(type + '-parado');
 	}
 	if (event.keyCode == 39 && posicao < limiteDireito) {
-		monstro.classList.remove(type + '-esquerda');
-		monstro.classList.remove(type + '-direita');
-		monstro.classList.add(type + '-parado');
+		jogador.classList.remove(type + '-esquerda');
+		jogador.classList.remove(type + '-direita');
+		jogador.classList.add(type + '-parado');
 	}
 	if (event.keyCode == 39 && posicao < limiteDireito) {
-		monstro.classList.remove(type + '-pulo');
-		monstro.classList.add(type + '-parado');
+		jogador.classList.remove(type + '-pulo');
+		jogador.classList.add(type + '-parado');
 	}
 }));
 
 function mudaPersonagem() {
-	monstro.classList = "";
+	
+	jogador.classList = "monster";
 
 	if (type === "pato") {
 		type = "coelho";
-		monstro.classList.add(type + '-parado');
+		jogador.classList.add(type + '-parado');
 		return;
 	}
 	if (type === "coelho") {
 		type = "pato";
-		monstro.classList.add(type + '-parado');
+		jogador.classList.add(type + '-parado');
 		return;
 	}
 	localStorage.setItem('TIPO_PERSONAGEM', type);

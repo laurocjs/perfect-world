@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/modal.css">
+  <link rel="stylesheet" href="/css/estilos-comuns.css">
+  <link rel="stylesheet" href="/css/estilos-menu.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="icon" href="resources/images/favicon.png" />
+  <title>{{browser_title}} - CraftFolioGotchi®</title>
+</head>
+
+<body>
+
+  <div class="invisible">
+
+    <audio id="music" src="{{background_music}}" autoplay loop></audio>
+  </div>
+
+  <div id="contador">
+    Contador de visitas:
+    <span id="visits_counter">{{visits_counter}}</span>
+  </div>
+  <section id="sky" data-item="{{background_item}}">
+    <header>
+      <h1 id="titulo" class="title">{{page_title}}
+        <h2 id="descricao" class="subtitle">{{page_subtitle}}
+          </span>
+    </header>
+  </section>
+
+  <section id="earth" data-item="{{ground_item}}">
+    <div class="monster-container">
+      <div id="player" class="monster" data-character="{{character_class}}"></div>
+    </div>
+    <div class="monster-container">
+      <div id="person" class="monster" data-character="{{person_class}}"></div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <article id="home" class="item"></article>
+    <article id="slides" class="item aparecer"></article>
+  </section>
+
+  <section id="modal">
+    <article class="fechar-modal"></article>
+    <article class="backdrop"></article>
+    <section class="conteudo-modal">
+      <article class="titulo">
+        <p></p>
+      </article>
+      <article class="descricao">
+        <p></p>
+      </article>
+      <article class="imagem">
+        <button class="botao" id="botao-voltar">&lt;</button>
+        <img src="">
+        <button class="botao" id="botao-avancar">&gt;</button>
+      </article>
+    </section>
+  </section>
+
+  <script type="text/javascript" src="/js/modal.js"></script>
+  <script type="text/javascript" src="/js/personagem.js"></script>
+  <script type="text/javascript" src="/js/scripts-world.js"></script>
+</body>
+
+</html>

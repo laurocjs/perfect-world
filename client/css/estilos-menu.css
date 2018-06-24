@@ -98,7 +98,6 @@
 #menu .item#uploads {
  background-image: url('../resources/images/icons/folder.svg');
 }
- 
  #menu .item#background-button.rain {
   background-image: url('../resources/images/icons/rain.svg');
 }
@@ -110,4 +109,15 @@
 }
 #menu .item#background-button.sky {
   background-image: url('../resources/images/icons/sky.svg');
+}
+
+#menu .item#home {
+  background-image: url('../resources/images/icons/home.svg');
+  opacity: 1;
+  display: block;
+}
+
+#menu .item#slides.aparecer {
+  opacity: 1;
+  display: block;
 }

@@ -58,12 +58,12 @@ body {
 }
 
 
-#monster-container {
+.monster-container {
   position: absolute;
   top: -120px;
 }
 
-#monster {
+.monster {
   width: 150px;
   height: 126px;
   margin-left: auto;
@@ -72,41 +72,45 @@ body {
   animation: stopcoelho 2s steps(3) infinite;
 }
 
-#monster.coelho-parado{
+#person {
+  margin-left: 600px;
+}
+
+.monster.coelho-parado{
   background-image: url('../resources/images/cuei-parado.png');
   animation: stopcoelho 2s steps(3) infinite;
 }
 
-#monster.coelho-esquerda {
+.monster.coelho-esquerda {
   background-image: url('../resources/images/cuei-esquerda.png');
   animation: walkingcoelho .5s steps(4) infinite;
 }
 
-#monster.coelho-direita {
+.monster.coelho-direita {
   background-image: url('../resources/images/cuei-direita.png');
   animation: walkingcoelho .5s steps(4) infinite;
 }
 
-#monster.coelho-pulo {
+.monster.coelho-pulo {
   background-image: url('../resources/images/cuei-pulo.png');
 }
 
-#monster.pato-parado{
+.monster.pato-parado{
   background-image: url('../resources/images/pato-parado.png');
   animation: stoppato 2s steps(4) infinite;
 }
 
-#monster.pato-esquerda {
+.monster.pato-esquerda {
   background-image: url('../resources/images/pato-esquerda.png');
   animation: walkingcoelho .5s steps(4) infinite;
 }
 
-#monster.pato-direita {
+.monster.pato-direita {
   background-image: url('../resources/images/pato-direita.png');
   animation: walkingcoelho .5s steps(4) infinite;
 }
 
-#monster.pato-pulo {
+.monster.pato-pulo {
   background-image: url('../resources/images/pato-pulo.png');
 }
 

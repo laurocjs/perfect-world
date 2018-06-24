@@ -18,15 +18,26 @@ var db = {
 app.set('view engine', 'hbs');
 app.set('views', 'server/views');
 
-db.page_title = 'TESTE LOKO';
-db.browser_title = 'Titulo janela';
-db.character_class = 'coelho';
-db.background_item = 1;
-db.ground_item = 0;
+
 // db.background_music = 'sample_audio02.mp3';
 
 app.get('/', function (req, res) {
+  db.page_title = 'TESTE LOKO';
+  db.browser_title = 'Titulo janela';
+  db.character_class = 'pato';
+  db.background_item = 1;
+  db.ground_item = 0;
   res.render('index', db);
+});
+
+app.get('/world/:numero_identificador/', function (req, res) {
+  db.page_title = 'Visita';
+  db.browser_title = 'Titulo da visita';
+  db.character_class = 'coelho';
+  db.person_class = 'coelho';
+  db.background_item = 2;
+  db.ground_item = 1;
+  res.render('world', db);
 });
 
 app.get('/login', function (req, res) {
@@ -66,5 +77,3 @@ app.get('/view', function (req, res) {
   res.render('uploads', { file: db.uploads.default.uploads });
   console.log(db.uploads.default.uploads)
 })
-
-
