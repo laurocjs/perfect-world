@@ -27,6 +27,7 @@ app.get('/', function (req, res) {
   db.character_class = 'pato';
   db.background_item = 1;
   db.ground_item = 0;
+  db.visits_counter = 5;
   res.render('index', db);
 });
 
@@ -37,6 +38,7 @@ app.get('/world/:numero_identificador/', function (req, res) {
   db.person_class = 'coelho';
   db.background_item = 2;
   db.ground_item = 1;
+  db.visits_counter = 10;
   res.render('world', db);
 });
 
