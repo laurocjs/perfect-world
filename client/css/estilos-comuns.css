@@ -136,11 +136,11 @@ body {
   box-sizing: border-box;
 }
 
-.ground-1 {
+#earth.ground1 {
 	background-image: url('../resources/images/ground-1.jpeg');
 }
 
-.ground-2 {
+#earth.ground2 {
 	background-image: url('../resources/images/tiles-big.png');
 }
 

@@ -3,24 +3,19 @@ var titulo = document.querySelector("#titulo");
 var descricao = document.querySelector("#descricao");
 var tituloTexto = document.querySelector("#tituloTexto");
 var optionsTexto = document.querySelector("#optionsTexto");
-var activeText = false;
 
-// document.querySelector("#evento-texto").addEventListener('click', () => {
-//   tituloTexto.classList.remove("invisible");
-//   optionsTexto.classList.add("invisible");
+document.querySelector('#menu .item#texto').addEventListener('click', () => {
+  document.querySelector('#menu .item#texto>#optionsTexto').classList.toggle('exibir');
+});
 
-//   titulo.textContent = document.querySelector(".valor-titulo").value;
-//   descricao.textContent = document.querySelector(".valor-desc").value;
-//   activeText = false;
-// });
+document.querySelector('#menu .item#texto>#optionsTexto').addEventListener('click', (e) => {
+  e.stopPropagation();
+});
 
-// document.querySelector("#texto").addEventListener('click', () => {
-//   if (!activeText) {
-//     tituloTexto.classList.toggle("invisible");
-//     optionsTexto.classList.toggle("invisible");
-//     activeText = true;
-//   }
-// });
+document.querySelector("#evento-texto").addEventListener('click', () => {
+  titulo.textContent = document.querySelector(".valor-titulo").value;
+  descricao.textContent = document.querySelector(".valor-desc").value;
+});
 
 //Edição do Fundo da página
 let backgroundClass = ['sky', 'stars', 'clouds', 'rain'];
@@ -46,21 +41,27 @@ backgroundButton.addEventListener('click', () => {
 });
 
 //Edição do Chão
-let changeFloor = function (option) {
-  var earth = document.querySelector("#earth");
-  earth.classList.remove("ground-1");
-  earth.classList.remove("ground-2");
-  earth.classList.add(option);
+let groundClass = ['ground1', 'ground2'];
+let ground = document.querySelector("#earth");
+let groundButton = document.querySelector("#ground-button");
+let activeGround = groundButton.dataset.item;
+
+let updateGround = () => {
+  ground.classList.add(groundClass[activeGround]);
+  groundButton.classList.add(groundClass[activeGround]);
+}
+let incrementGround = () => {
+  ground.classList.remove(groundClass[activeGround]);
+  groundButton.classList.remove(groundClass[activeGround]);
+  activeGround = (activeGround + 1) % groundClass.length;
+  updateGround();
 }
 
-// document.querySelector("#ground1").addEventListener('click', () => {
-//   changeFloor('ground-1');
-// });
+updateGround();
 
-// document.querySelector("#ground2").addEventListener('click', () => {
-//   changeFloor('ground-2');
-
-// });
+groundButton.addEventListener('click', () => {
+  incrementGround();
+});
 
 //Adição de audio
 // let audioExemplo = 'https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3';

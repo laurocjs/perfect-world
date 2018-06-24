@@ -31,7 +31,7 @@
     </header>
   </section>
 
-  <section id="earth" class="ground-1">
+  <section id="earth">
     <div id="monster-container">
       <div id="monster" data-character="{{character_class}}" class=""></div>
     </div>
@@ -43,12 +43,11 @@
       </article>
     </section>
 
-    <section>
+    <section class="hidden-items">
       <article id="trocarPersonagem" class="item">
       </article>
 
       <article id="texto" class="item" data-item="3">
-        {{!--
         <section id="optionsTexto" class="invisible">
           <article>
             <strong>Título</strong>
@@ -58,8 +57,8 @@
             <strong>Descrição</strong>
           </article>
           <input id="desc" class="valor-desc" name="nome" type="text">
-          <button id="evento-texto" class="botao-modal">Confirma</button>
-        </section> --}}
+          <button id="evento-texto">Confirma</button>
+        </section>
       </article>
 
       <article id="background-button" class="item" data-item="{{background_item}}">
@@ -69,7 +68,7 @@
       </article>
 
       <article id="slides" class="item"></article>
-
+      <article id="uploads" class="item"></article>
       <article id="definir-audio" class="item">
       </article>
     </section>
