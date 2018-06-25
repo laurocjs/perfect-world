@@ -12,7 +12,7 @@ app.listen(3000, function () {
 });
 
 var db = {
-  // uploads: JSON.parse(fs.readFileSync('server/data/uploads.json'))
+   uploads: JSON.parse(fs.readFileSync('server/data/uploads.json'))
 }
 
 app.set('view engine', 'hbs');
