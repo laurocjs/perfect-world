@@ -1,105 +1,123 @@
 #menu {
   position: fixed;
-  bottom: 5%;
+  bottom: 0;
   z-index: 2;
   display: flex;
-  flex-direction: column-reverse;
+  flex-flow: row;
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
-  align-content: center;
+  justify-content: flex-start;
   width: 100%;
+  height: 64px;
+  background-color: #2e353d;
 }
 
-#menu-toggle {
+#menu .hidden-items,
+#menu #menu-toggle-area {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+#menu .item {
+  box-sizing: border-box;
+  padding: 10px;
   position: relative;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  background-color: rgb(44, 138, 247);
+  height: 100%;
+  width: 64px;
   color: #fff;
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 1em;
   text-align: center;
   vertical-align: middle;
-  transition: background-color 3s;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .0;
+  display: none;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-fill-mode: forwards;
 }
 
-#menu-toggle:hover {
-  background-color: rebeccapurple;
-  transition: background-color 2s;
+#menu .item:hover {
+  background-color: #4f5b69;
 }
 
-#menu-itens {
-  position: relative;
-  bottom: 55px;
-  width: 70%;
-  max-width: 400px;
-  height: 0px;
-  /* começa fechado */
-  background-color: white;
-  transition: height 1s ease-in-out;
-  border-radius: 3px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  overflow: auto;
-}
-
-#menu-itens.aberto {
-  height: 400px;
-}
-
-#menu-itens .item {
-  position: relative;
-  width: 40%;
-  height: 0px;
-  margin: 10px;
-  border-radius: 3px;
-  background-color: skyblue;
-  opacity: .1;
-  transition: opacity 2s .3s, height 1s .3s;
-  cursor: move;
-  cursor: -moz-grab;
-  text-align: center;
+ #menu>#menu-toggle-area {
+  height: 100%;
+  width: 64px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: auto;
-}
+ }
 
-#menu-itens.aberto .item {
-  height: 40%;
-  opacity: .7;
-}
-
-#menu-itens.aberto .item:hover {
+#menu .item#menu-toggle {
+  background-image: url('../resources/images/icons/chevrons-right.svg');
   opacity: 1;
-  transition: opacity 1s;
+  display: block;
+  width: 24px;
+  height: 24px;
+  transform-origin: center center;
+ }
+
+ #menu .item#trocarPersonagem {
+  background-image: url('../resources/images/icons/github.svg');
+ }
+ #menu .item#texto {
+  background-image: url('../resources/images/icons/message-square.svg');
+ }
+
+ #menu .item#texto>#optionsTexto {
+   position: absolute;
+   bottom: 64px;
+   left: 0;
+   align-items: center;
+   justify-content: space-around;
+   background-color: #4f5b69;
+   height: 64px;
+   width: 640px;
+   display: none;
+   opacity: 0;
+   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+ }
+
+ #menu .item#texto>#optionsTexto.exibir {
+  display: flex;
+  opacity: 1;
+ }
+ #menu .item#definir-audio {
+  background-image: url('../resources/images/icons/headphones.svg');
+ }
+ #menu .item#ground-button {
+  background-image: url('../resources/images/icons/slack.svg');
+}
+#menu .item#slides {
+ background-image: url('../resources/images/icons/image.svg');
+}
+#menu .item#uploads {
+ background-image: url('../resources/images/icons/folder.svg');
+}
+ #menu .item#background-button.rain {
+  background-image: url('../resources/images/icons/rain.svg');
+}
+#menu .item#background-button.stars {
+  background-image: url('../resources/images/icons/stars.svg');
+}
+#menu .item#background-button.clouds {
+  background-image: url('../resources/images/icons/clouds.svg');
+}
+#menu .item#background-button.sky {
+  background-image: url('../resources/images/icons/sky.svg');
 }
 
-#menu-itens.aberto .item:active:hover {
-  cursor: -moz-grabbing;
+#menu .item#home {
+  background-image: url('../resources/images/icons/home.svg');
+  opacity: 1;
+  display: block;
 }
 
-#menu-itens input {
-  margin-top: 6px;
-}
-
-#menu-itens button {
-  margin-top: 16px;
-}
-
-input {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 50%;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  border-bottom: solid 1px rebeccapurple;
-  background-color: transparent;
-  margin-top: 16px;
+#menu .item#slides.aparecer {
+  opacity: 1;
+  display: block;
 }

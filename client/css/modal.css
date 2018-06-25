@@ -2,7 +2,7 @@
   display: none;
 }
 
-.backdrop {
+#modal .backdrop {
   top: 0;
   bottom: 0;
   left: 0;
@@ -12,7 +12,7 @@
   background-color: rgba(1, 1, 1, .4)
 }
 
-.fechar-modal {
+#modal .fechar-modal {
   display: none;
   z-index: 4;
   position: fixed;
@@ -20,7 +20,7 @@
   bottom: 16px;
 }
 
-.conteudo-modal {
+#modal .conteudo-modal {
   z-index: 3;
   display: flex;
   position: fixed;
@@ -40,14 +40,14 @@
   padding: 0px;
 }
 
-.conteudo-modal .titulo {
+#modal .conteudo-modal .titulo {
   font-size: 24px;
   padding: 0px 16px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.conteudo-modal .descricao {
+#modal .conteudo-modal .descricao {
   font-size: 16px;
   padding: 0px 16px;
   margin: 0;
@@ -55,12 +55,12 @@
   box-sizing: border-box;
 }
 
-.imagem {
+#modal .imagem {
   height: 70%;
   width: 100%;
 }
 
-.imagem .botao {
+#modal .imagem .botao {
   height: 100%;
   position: absolute;
   background-color: rgba(1, 1, 1, .2);
@@ -71,28 +71,27 @@
   top: 0;
 }
 
-.imagem .botao:hover {
+#modal .imagem .botao:hover {
   background-color: rgba(1, 1, 1, .4);
 }
 
-.imagem .botao#botao-voltar {
+#modal .imagem .botao#botao-voltar {
   left: 0;
 }
 
-.imagem .botao#botao-avancar {
+#modal .imagem .botao#botao-avancar {
   right: 0;
 }
 
 @media (max-width: 487px) {
-  .fechar-modal {
+  #modal .fechar-modal {
     display: block;
     width: 50px;
     height: 50px;
-    background-image: url(../resources/images/x-close.svg);
+    background-image: url(../resources/images/icons/x-close.svg);
     background-size: cover;
-    stroke: violet;
   }
-  .conteudo-modal {
+  #modal .conteudo-modal {
     top: 0;
     bottom: 0;
     left: 0;
@@ -100,7 +99,7 @@
   }
 }
 
-.botao-modal {
+#modal .botao-modal {
   font-size: 10px;
   width: 50%;
   height: 16px;
@@ -109,18 +108,14 @@
   margin-right: 10px;
 }
 
-.botao-modal:hover {
+#modal .botao-modal:hover {
   color: blue;
 }
 
-section {
-  margin-bottom: 10px;
-}
-
-.invisible {
+#modal .invisible {
   display: none;
 }
 
-#menu-itens article {
+#modal #menu-itens article {
   padding-top: 16px;
 }

@@ -40,19 +40,10 @@ let trocaImagem = (valor) => {
 };
 
 // Bind eventos
-let monstroClick = document.querySelector("#monster");
-monstroClick.addEventListener('click', abrirModal);
+let slides = document.querySelector("#slides");
+slides.addEventListener('click', abrirModal);
 backdrop.addEventListener('click', fecharModal);
 botaoFecharModal.addEventListener('click', fecharModal);
 
 botaoVoltar.addEventListener('click', () => trocaImagem(-1));
 botaoAvancar.addEventListener('click', () => trocaImagem(1));
-
-//Botão do modal
-buttonMenu.addEventListener('click', () => {
-  if (buttonMenu.innerHTML === '+'){
-    buttonMenu.innerHTML = '-'
-  } else {
-    buttonMenu.innerHTML = '+'
-  }  
-});
