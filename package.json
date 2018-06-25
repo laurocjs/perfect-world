@@ -18,6 +18,7 @@
   "homepage": "https://github.com/laurocjs/perfect-world#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "formidable": "^1.2.1",
     "hbs": "^4.0.1",
     "underscore": "^1.9.1"
   }
