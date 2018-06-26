@@ -54,12 +54,12 @@ app.post('/upload', function (req, res) {
   form.uploadDir = path.join(__dirname, '/uploads');
 
   form.on('file', function (field, file) {
-    fs.rename(file.path, path.join(form.uploadDir, file.name));
-    console.log(file.name);
-    db.uploads.default.uploads.push({ url: file.name });
-    console.log(db.uploads);
-    var jsonFile = JSON.stringify(db.uploads)
-    fs.writeFileSync('server/data/uploads.json', jsonFile);
+    if (isNew(file.name)){
+      fs.rename(file.path, path.join(form.uploadDir, file.name));
+      db.uploads.default.uploads.push({ url: file.name });
+      var jsonFile = JSON.stringify(db.uploads)
+      fs.writeFileSync('server/data/uploads.json', jsonFile);
+    }
   });
 
   form.on('error', function (err) {
@@ -70,7 +70,6 @@ app.post('/upload', function (req, res) {
     res.end('success');
   });
 
-  console.log("saindo");
   form.parse(req);
 
 });
@@ -79,3 +78,18 @@ app.get('/view', function (req, res) {
   res.render('uploads', { file: db.uploads.default.uploads });
   console.log(db.uploads.default.uploads)
 })
+
+app.get('/delete/:name/', function (req, res) {
+  var filePath = path.join(__dirname, '/uploads');
+  fs.unlinkSync(filePath + name);
+})
+
+function isNew(nome){
+  var list = db.uploads.default.uploads  
+  for  (var i = 0; i < list.length; i++){
+    if (nome == list[i].url){
+      return false; 
+    }          
+  }
+  return true;
+}
