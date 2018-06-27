@@ -15,6 +15,9 @@ var db = {
    uploads: JSON.parse(fs.readFileSync('server/data/uploads.json'))
 }
 
+var imageFormats = ['png', 'tif', 'tiff', 'gif', 'jpeg', 'jpg', 'jif', 'jfif', 'jp2', 'jpx', 'j2k', 'j2c' ];
+var musicFormats = ['wav', 'aiff', 'mp3', 'aac', 'alac', 'ogg', 'wma', 'flac', '3gp', 'm4a', 'm4b', 'm4p' ];
+
 app.set('view engine', 'hbs');
 app.set('views', 'server/views');
 
@@ -48,7 +51,6 @@ app.get('/login', function (req, res) {
 
 app.post('/upload', function (req, res) {
 
-  console.log(req);
   var form = new formidable.IncomingForm();
   form.multiples = true;
   form.uploadDir = path.join(__dirname, '/uploads');
@@ -57,6 +59,11 @@ app.post('/upload', function (req, res) {
     if (isNew(file.name)){
       fs.rename(file.path, path.join(form.uploadDir, file.name));
       db.uploads.default.uploads.push({ url: file.name });
+      if (imageFormats.indexOf(getExtension(file.name)) > -1){
+        db.uploads.default.images.push({ url: file.name });
+      } else if (musicFormats.indexOf(getExtension(file.name)) > -1){
+        db.uploads.default.music.push({ url: file.name });
+      }       
       var jsonFile = JSON.stringify(db.uploads)
       fs.writeFileSync('server/data/uploads.json', jsonFile);
     }
@@ -76,20 +83,22 @@ app.post('/upload', function (req, res) {
 
 app.get('/view', function (req, res) {
   res.render('uploads', { file: db.uploads.default.uploads });
-  console.log(db.uploads.default.uploads)
-})
-
-app.get('/delete/:name/', function (req, res) {
-  var filePath = path.join(__dirname, '/uploads');
-  fs.unlinkSync(filePath + name);
 })
 
 function isNew(nome){
-  var list = db.uploads.default.uploads  
-  for  (var i = 0; i < list.length; i++){
-    if (nome == list[i].url){
-      return false; 
-    }          
+  var list = db.uploads.default.uploads;
+  if (list && list.length) {
+    for  (var i = 0; i < list.length; i++){
+      if (nome == list[i].url){
+        return false; 
+      }          
+    }    
   }
   return true;
 }
+
+function getExtension(nome){
+  var array = nome.split(".");
+  return array[1];  
+}
+

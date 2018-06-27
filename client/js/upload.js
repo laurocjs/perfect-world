@@ -2,7 +2,6 @@ $('.upload-btn').on('click', function (){
     $('#upload-input').click();
     $('.progress-bar').text('0%');
     $('.progress-bar').width('0%');
-    console.log('teste');
 });
 
 
@@ -23,9 +22,9 @@ $('#upload-input').on('change', function(){
       data: formData,
       processData: false,
       contentType: false,
-      success: function(data){
-        $('#view-btn').click();
-      },
+      //success: function(data){
+        //$('#view-btn').click();
+      //},
       xhr: function() {
       var xhr = new XMLHttpRequest();
       xhr.upload.addEventListener('progress', function(evt) {
@@ -34,6 +33,7 @@ $('#upload-input').on('change', function(){
           percentComplete = parseInt(percentComplete * 100);
           $('.progress-bar').text(percentComplete + '%');
           $('.progress-bar').width(percentComplete + '%');
+          $('#view-btn').click();
         }
 
       }, false);
@@ -45,13 +45,11 @@ $('#upload-input').on('change', function(){
 });
 
 $('#view-btn').on('click', function (){
-  console.log("INICIO");
   $.ajax({
     url: '/view',
     type: 'GET',
     success: function(data){
       $('#menu-itens').html(data);
-      console.log(data);
     }
   })
 });
