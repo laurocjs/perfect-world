@@ -45,6 +45,10 @@ app.get('/world/:numero_identificador/', function (req, res) {
   res.render('world', db);
 });
 
+app.get('/uploads/:numero_identificador/', function (req, res) {
+  res.render('uploads', db);
+});
+
 app.get('/login', function (req, res) {
   res.sendFile(path.join(__dirname, 'login.html'));
 });
