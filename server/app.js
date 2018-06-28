@@ -5,6 +5,7 @@ var express = require('express'),
   formidable = require('formidable');
   session = require('express-session');
   bodyParser = require('body-parser');
+  md5 = require('md5');
 
 
 let dao = require('./dao.js');
@@ -138,7 +139,7 @@ function testMail(users,toadd,req,res){
   }
   else{
     if(toadd.passwd==toadd.passwdconfirm){
-      dao.insertUser(toadd.nome,toadd.email,toadd.passwd)
+      dao.insertUser(toadd.nome,toadd.email,md5(toadd.passwd))
       req.session.user = user;
       res.redirect('/');
     }
@@ -148,7 +149,7 @@ function testMail(users,toadd,req,res){
 function setsession(users,req,res){
   if(users.length){
      user=users[0];
-     if(user.email === req.body.email && user.password === req.body.passwd){
+     if(user.email === req.body.email && user.password === md5(req.body.passwd)){
         req.session.user = user;
         res.redirect('/');
      }
