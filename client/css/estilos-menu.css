@@ -89,6 +89,9 @@
  #menu .item#definir-audio {
   background-image: url('../resources/images/icons/headphones.svg');
  }
+ #menu .item#salvar {
+  background-image: url('../resources/images/icons/save.svg');
+ }
  #menu .item#ground-button {
   background-image: url('../resources/images/icons/slack.svg');
 }

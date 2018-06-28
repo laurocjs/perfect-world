@@ -2,6 +2,19 @@ document.querySelector("#home").addEventListener('click', () => {
   window.location.href = "/";
 });
 
+// Personagem parado
+let person = document.querySelector("#person");
+let personIntType = person.dataset.character;
+let personType;
+
+if (!personIntType || personIntType == 1)
+  personType = "pato";
+if (intType == 2)
+  personType = "coelho";
+
+person.classList.add(personType + '-parado');
+
+
 // Fundo da página
 let backgroundClass = ['sky', 'stars', 'clouds', 'rain'];
 let sky = document.querySelector("#sky");

@@ -1,8 +1,43 @@
+// Salvar
+let botaoSalvar = document.querySelector("#salvar");
+let user = {};
+botaoSalvar.addEventListener('click', () => {
+  user.user = botaoSalvar.dataset.item;
+  let spriteCharacter = document.querySelector('#player').dataset.character;
+  if (spriteCharacter == "pato" || spriteCharacter == "")
+    user.character = 1;
+  if (spriteCharacter == "coelho")
+    user.character = 2;
+  // user.character = 2;
+  $.ajax({
+    url: "/preferences",
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(user),
+    contentType: "application/json",
+    cache: false,
+    timeout: 5000,
+    complete: function () {
+      //called when complete
+      console.log('process complete');
+    },
+    success: function (data) {
+      console.log(data);
+      console.log('process sucess');
+    },
+    error: function (data, status) {
+      console.log('process error');
+    },
+  });
+
+});
+
+
 //Edição da Caixa de texto
-var titulo = document.querySelector("#titulo");
-var descricao = document.querySelector("#descricao");
-var tituloTexto = document.querySelector("#tituloTexto");
-var optionsTexto = document.querySelector("#optionsTexto");
+let titulo = document.querySelector("#titulo");
+let descricao = document.querySelector("#descricao");
+let tituloTexto = document.querySelector("#tituloTexto");
+let optionsTexto = document.querySelector("#optionsTexto");
 
 document.querySelector('#menu .item#texto').addEventListener('click', () => {
   document.querySelector('#menu .item#texto>#optionsTexto').classList.toggle('exibir');
@@ -13,8 +48,12 @@ document.querySelector('#menu .item#texto>#optionsTexto').addEventListener('clic
 });
 
 document.querySelector("#evento-texto").addEventListener('click', () => {
-  titulo.textContent = document.querySelector(".valor-titulo").value;
-  descricao.textContent = document.querySelector(".valor-desc").value;
+  let titulotext = document.querySelector(".valor-titulo").value;
+  let subtitulo = document.querySelector(".valor-desc").value;
+  titulo.textContent = titulotext;
+  user.textbox_title = titulotext;
+  descricao.textContent = subtitulo;
+  user.textbox = subtitulo;
 });
 
 //Edição do Fundo da página
@@ -26,6 +65,7 @@ let activeBackground = backgroundButton.dataset.item;
 let updateBackground = () => {
   sky.classList.add(backgroundClass[activeBackground]);
   backgroundButton.classList.add(backgroundClass[activeBackground]);
+  user.sky = activeBackground;
 }
 let incrementBackground = () => {
   sky.classList.remove(backgroundClass[activeBackground]);
@@ -49,6 +89,7 @@ let activeGround = groundButton.dataset.item;
 let updateGround = () => {
   ground.classList.add(groundClass[activeGround]);
   groundButton.classList.add(groundClass[activeGround]);
+  user.ground = activeGround;
 }
 let incrementGround = () => {
   ground.classList.remove(groundClass[activeGround]);

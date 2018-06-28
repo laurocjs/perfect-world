@@ -6,9 +6,12 @@ let posicaoy = limiteBaixo + 1;
 let jogador = document.querySelector("#player");
 window.setInterval(gravidade, 100);
 
-let type = jogador.dataset.character;
-if (!type)
+let intType = jogador.dataset.character;
+
+if (!intType || intType == 1)
 	type = "pato";
+if (intType == 2)
+	type = "coelho";
 
 jogador.classList.add(type + '-parado');
 
@@ -80,12 +83,13 @@ function mudaPersonagem() {
 	if (type === "pato") {
 		type = "coelho";
 		jogador.classList.add(type + '-parado');
+		document.querySelector('#player').dataset.character = type;
 		return;
 	}
 	if (type === "coelho") {
 		type = "pato";
 		jogador.classList.add(type + '-parado');
+		document.querySelector('#player').dataset.character = type;
 		return;
 	}
-	localStorage.setItem('TIPO_PERSONAGEM', type);
 }

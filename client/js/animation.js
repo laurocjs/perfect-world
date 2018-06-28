@@ -7,7 +7,7 @@ let giraToggleMenu = toggleMenu.animate(
   }, {
     transform: 'rotate(180deg)'
   }], {
-    duration: animationDelay*7,
+    duration: animationDelay*8,
     iterations: 1,
     fill: 'both',
     easing: 'linear'
@@ -18,9 +18,9 @@ let moveToggleMenu =
     [{
       transform: 'translateX(0px)'
     }, {
-      transform: `translateX(${64*8}px)`
+      transform: `translateX(${64*9}px)`
     }], {
-      duration: animationDelay*7,
+      duration: animationDelay*8,
       iterations: 1,
       fill: 'both',
       easing: 'linear'
