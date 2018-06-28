@@ -18,8 +18,10 @@
   "homepage": "https://github.com/laurocjs/perfect-world#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "formidable": "^1.2.1",
     "hbs": "^4.0.1",
+    "pg": "^7.4.3",
     "underscore": "^1.9.1"
   }
 }

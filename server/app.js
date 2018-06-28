@@ -3,13 +3,22 @@ var express = require('express'),
   app = express(),
   path = require('path'),
   formidable = require('formidable');
+  session = require('express-session');
+  bodyParser = require('body-parser');
+
+
+let dao = require('./dao.js');
 
 app.use(express.static('client'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
-app.listen(3000, function () {
+app.listen(2000, function () {
   console.log('Listening on port 3000');
 });
+
+app.use(session({secret: "123456"}));
 
 var db = {
    uploads: JSON.parse(fs.readFileSync('server/data/uploads.json'))
@@ -49,8 +58,30 @@ app.get('/uploads/:numero_identificador/', function (req, res) {
   res.render('uploads', db);
 });
 
+app.get('/cadastro', function (req, res) {
+  res.render('cadastro');
+});
+
+app.post('/cadastro', function(req, res){
+   if(!req.body.nome || !req.body.email || !req.body.passwd || !req.body.passwdconfirm){
+      res.status("400");
+      res.send("Campos invalidos!");
+   } else {
+      user={nome:req.body.nome,email:req.body.email,passwd:req.body.passwd,passwdconfirm:req.body.passwdconfirm}
+      dao.getUserByEmail(req.body.email,testMail,user,req,res);
+   }
+});
+
 app.get('/login', function (req, res) {
-  res.sendFile(path.join(__dirname, 'login.html'));
+  res.render('login');
+});
+
+app.post('/login', function(req, res){
+   if(!req.body.email || !req.body.passwd){
+      console.log("Please enter both email and password");
+   } else {
+     dao.getUserByEmail(req.body.email,setsession,req,res);
+   }
 });
 
 app.post('/upload', function (req, res) {
@@ -67,7 +98,7 @@ app.post('/upload', function (req, res) {
         db.uploads.default.images.push({ url: file.name });
       } else if (musicFormats.indexOf(getExtension(file.name)) > -1){
         db.uploads.default.music.push({ url: file.name });
-      }       
+      }
       var jsonFile = JSON.stringify(db.uploads)
       fs.writeFileSync('server/data/uploads.json', jsonFile);
     }
@@ -94,15 +125,38 @@ function isNew(nome){
   if (list && list.length) {
     for  (var i = 0; i < list.length; i++){
       if (nome == list[i].url){
-        return false; 
-      }          
-    }    
+        return false;
+      }
+    }
   }
   return true;
 }
 
-function getExtension(nome){
-  var array = nome.split(".");
-  return array[1];  
+function testMail(users,toadd,req,res){
+  if(users.length){
+     console.log("User Already Exists! Login or choose another user id");
+  }
+  else{
+    if(toadd.passwd==toadd.passwdconfirm){
+      dao.insertUser(toadd.nome,toadd.email,toadd.passwd)
+      req.session.user = user;
+      res.redirect('/');
+    }
+  }
 }
 
+function setsession(users,req,res){
+  if(users.length){
+     user=users[0];
+     if(user.email === req.body.email && user.password === req.body.passwd){
+        req.session.user = user;
+        res.redirect('/');
+     }
+  }
+  console.log("Invalid credentials!");
+}
+
+function getExtension(nome){
+  var array = nome.split(".");
+  return array[1];
+}
