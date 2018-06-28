@@ -57,5 +57,14 @@ module.exports = {
       }
     })
     pool.query('COMMIT')
+  },
+	updateLastVisit: function (user) {
+    pool.query('update "user" set last_visit=now() where user_id=$1;', [user], (err, res) => {
+      if (err) {
+        console.log(err);
+        res.status(400).send(err);
+      }
+    })
+    pool.query('COMMIT')
   }
 }

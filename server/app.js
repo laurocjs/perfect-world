@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
-app.listen(3000, function () {
-  console.log('Listening on port 3000');
+app.listen(2000, function () {
+  console.log('Listening on port 2000');
 });
 
 app.use(session({ secret: "123456" }));
@@ -43,7 +43,12 @@ app.get('/', function (req, res) {
     db.background_item = req.session.user.sky;
     db.ground_item = req.session.user.ground;
     db.page_subtitle = req.session.user.textbox;
-    db.visits_counter = 5;
+
+
+    let millisecondsPerDay = 24 * 60 * 60 * 1000;
+    db.visits_counter = Math.floor((new Date() - new Date(req.session.user.last_visit)) / millisecondsPerDay);
+		// db.visits_counter = 5;
+
     res.render('index', db);
   }
   else {
@@ -65,6 +70,7 @@ app.get('/world/:numero_identificador/', function (req, res) {
     dbworld.ground_item = req.session.world.ground;
     dbworld.page_subtitle = req.session.world.textbox;
     dbworld.visits_counter = 5;
+		dao.updateLastVisit(req.session.world.user_id);
 
     console.log("World user: " + req.session.world.name);
     console.log("Guest name: " + req.session.user.name);
@@ -85,6 +91,10 @@ app.get('/uploads/:numero_identificador/', function (req, res) {
 
 app.get('/cadastro', function (req, res) {
   res.render('cadastro');
+});
+
+app.get('/logout', function (req, res) {
+	delete req.session.user;
 });
 
 app.post('/cadastro', function (req, res) {
@@ -172,7 +182,7 @@ function testMail(users, toadd, req, res) {
     if (toadd.passwd == toadd.passwdconfirm) {
       dao.insertUser(toadd.nome, toadd.email, md5(toadd.passwd))
       req.session.user = user;
-      res.redirect('/');
+      res.redirect('/login');
     }
   }
 }

@@ -4,7 +4,9 @@ CREATE TABLE public."user" (
     email character varying(255),
     password character varying(255),
     security_code character varying(255),
-    passwordchangerequest boolean
+    passwordchangerequest boolean,
+		last_visit date,
+		solidao integer
 );
 
 CREATE TABLE public."user_preferences" (
@@ -23,5 +25,3 @@ CREATE TABLE public."user_image" (
     user_fk integer,
     image_path character varying(255)
 );
-
-
